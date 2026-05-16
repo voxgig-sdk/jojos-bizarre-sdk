@@ -1,0 +1,26 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 2
+  metrics: count: path: 4
+  metrics: count: method: 4
+
+  entity: character: {
+    path: "/api/characters": {
+      op: list: method: *GET
+    }
+    path: "/api/characters/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: stand: {
+    path: "/api/stands": {
+      op: list: method: *GET
+    }
+    path: "/api/stands/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+}

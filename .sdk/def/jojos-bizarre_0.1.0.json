@@ -1,0 +1,323 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Jojo's Bizarre API",
+    "description": "This API provides access to detailed information about characters and stands from the Jojo's Bizarre Adventure series. Users can retrieve data on all characters, individual characters by ID, all stands, and stands by ID, alongside various query options.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://jojos-bizarre-api.netlify.app/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://stand-by-me.herokuapp.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/characters": {
+      "get": {
+        "summary": "Get all characters",
+        "description": "Retrieves a list of all characters from the Jojo's Bizarre Adventure series",
+        "operationId": "getAllCharacters",
+        "tags": [
+          "Characters"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter characters by name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of characters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Character"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/characters/{id}": {
+      "get": {
+        "summary": "Get character by ID",
+        "description": "Retrieves detailed information about a specific character by their ID",
+        "operationId": "getCharacterById",
+        "tags": [
+          "Characters"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the character",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with character details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Character"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Character not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/stands": {
+      "get": {
+        "summary": "Get all stands",
+        "description": "Retrieves a list of all stands from the Jojo's Bizarre Adventure series",
+        "operationId": "getAllStands",
+        "tags": [
+          "Stands"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter stands by name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of stands",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Stand"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/stands/{id}": {
+      "get": {
+        "summary": "Get stand by ID",
+        "description": "Retrieves detailed information about a specific stand by its ID",
+        "operationId": "getStandById",
+        "tags": [
+          "Stands"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the stand",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with stand details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Stand"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Stand not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Character": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the character"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the character"
+          },
+          "japaneseName": {
+            "type": "string",
+            "description": "Japanese name of the character"
+          },
+          "image": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the character's image"
+          },
+          "chapter": {
+            "type": "string",
+            "description": "Chapter/Part of the series the character appears in"
+          },
+          "nationality": {
+            "type": "string",
+            "description": "Nationality of the character"
+          },
+          "stand": {
+            "type": "string",
+            "description": "Name of the character's stand, if applicable"
+          },
+          "abilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of character abilities"
+          }
+        }
+      },
+      "Stand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the stand"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the stand"
+          },
+          "japaneseName": {
+            "type": "string",
+            "description": "Japanese name of the stand"
+          },
+          "image": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the stand's image"
+          },
+          "chapter": {
+            "type": "string",
+            "description": "Chapter/Part of the series the stand appears in"
+          },
+          "user": {
+            "type": "string",
+            "description": "Name of the stand user"
+          },
+          "abilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of stand abilities"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type or classification of the stand"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Characters",
+      "description": "Operations related to Jojo's Bizarre Adventure characters"
+    },
+    {
+      "name": "Stands",
+      "description": "Operations related to Jojo's Bizarre Adventure stands"
+    }
+  ]
+}
