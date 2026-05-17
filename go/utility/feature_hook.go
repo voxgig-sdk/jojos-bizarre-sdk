@@ -3,7 +3,7 @@ package utility
 import (
 	"reflect"
 
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/core"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/core"
 )
 
 func featureHookUtil(ctx *core.Context, name string) {

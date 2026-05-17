@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/jojos-bizarre-sdk"
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/core"
+	sdk "github.com/voxgig-sdk/jojos-bizarre-sdk/go"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/core"
 )
 
 func TestCharacterDirect(t *testing.T) {

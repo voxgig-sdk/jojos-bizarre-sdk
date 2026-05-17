@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/jojos-bizarre-sdk/core"
+import "github.com/voxgig-sdk/jojos-bizarre-sdk/go/core"
 
 func prepareMethodUtil(ctx *core.Context) string {
 	opname := ctx.Op.Name

@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/core"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/jojos-bizarre-sdk/go/utility/struct"
 )
 
 type StandEntity struct {

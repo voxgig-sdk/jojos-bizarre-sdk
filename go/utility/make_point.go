@@ -3,9 +3,9 @@ package utility
 import (
 	"strings"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/jojos-bizarre-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/core"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/core"
 )
 
 func makePointUtil(ctx *core.Context) (map[string]any, error) {

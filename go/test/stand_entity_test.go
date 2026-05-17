@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/jojos-bizarre-sdk"
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/core"
+	sdk "github.com/voxgig-sdk/jojos-bizarre-sdk/go"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/jojos-bizarre-sdk/go/utility/struct"
 )
 
 func TestStandEntity(t *testing.T) {

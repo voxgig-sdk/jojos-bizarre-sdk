@@ -1,10 +1,10 @@
 package voxgigjojosbizarresdk
 
 import (
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/core"
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/entity"
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/feature"
-	_ "github.com/voxgig-sdk/jojos-bizarre-sdk/utility"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/core"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/entity"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/feature"
+	_ "github.com/voxgig-sdk/jojos-bizarre-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

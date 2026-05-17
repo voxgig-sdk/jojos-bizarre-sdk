@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/jojos-bizarre-sdk/core"
+	"github.com/voxgig-sdk/jojos-bizarre-sdk/go/core"
 )
 
 type BaseFeature struct {
