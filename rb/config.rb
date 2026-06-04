@@ -15,9 +15,6 @@ module JojosBizarreConfig
       },
       "options" => {
         "base" => "https://stand-by-me.herokuapp.com",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

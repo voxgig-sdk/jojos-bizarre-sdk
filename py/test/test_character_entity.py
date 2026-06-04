@@ -102,7 +102,6 @@ def _character_basic_setup(extra):
         "JOJOSBIZARRE_TEST_CHARACTER_ENTID": idmap,
         "JOJOSBIZARRE_TEST_LIVE": "FALSE",
         "JOJOSBIZARRE_TEST_EXPLAIN": "FALSE",
-        "JOJOSBIZARRE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -113,7 +112,6 @@ def _character_basic_setup(extra):
     if env.get("JOJOSBIZARRE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JOJOSBIZARRE_APIKEY"),
             },
             extra or {},
         ])

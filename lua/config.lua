@@ -14,9 +14,6 @@ local function make_config()
     },
     options = {
       base = "https://stand-by-me.herokuapp.com",
-      auth = {
-        prefix = "Bearer",
-      },
       headers = {
         ["content-type"] = "application/json",
       },
