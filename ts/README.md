@@ -10,7 +10,7 @@ The TypeScript SDK for the JojosBizarre API — a type-safe, entity-oriented cli
 
 ## Install
 ```bash
-npm install jojos-bizarre
+npm install @voxgig-sdk/jojos-bizarre
 ```
 ## Tutorial: your first API call
 

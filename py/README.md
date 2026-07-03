@@ -10,7 +10,7 @@ The Python SDK for the JojosBizarre API — an entity-oriented client following 
 
 ## Install
 ```bash
-pip install jojos-bizarre-sdk
+pip install voxgig-sdk-jojos-bizarre
 ```
 
 Or install from source:

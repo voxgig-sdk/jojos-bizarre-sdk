@@ -10,7 +10,7 @@ The Lua SDK for the JojosBizarre API — an entity-oriented client using Lua con
 
 ## Install
 ```bash
-luarocks install jojos-bizarre-sdk
+luarocks install voxgig-sdk-jojos-bizarre
 ```
 
 If the module is not yet published, add the source directory to

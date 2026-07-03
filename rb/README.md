@@ -10,13 +10,13 @@ The Ruby SDK for the JojosBizarre API — an entity-oriented client using idioma
 
 ## Install
 ```bash
-gem install jojos-bizarre-sdk
+gem install voxgig-sdk-jojos-bizarre
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "jojos-bizarre-sdk"
+gem "voxgig-sdk-jojos-bizarre"
 ```
 
 Then run:
