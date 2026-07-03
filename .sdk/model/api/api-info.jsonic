@@ -16,18 +16,7 @@ main: {
       ]
       title: "Jojo's Bizarre API"
       version: "1.0.0"
-      tagline: "Look up JoJo's Bizarre Adventure characters and their Stands"
-      homepage: "https://stand-by-me.herokuapp.com"
-      about_md: `JoJo's Bizarre API is a community-built REST API that exposes data about characters and Stands from Hirohiko Araki's manga and anime series *JoJo's Bizarre Adventure*. The service is hosted at \`https://stand-by-me.herokuapp.com\`.
-
-It is aimed at fan projects, learning exercises, and tooling that needs a small, themed dataset to play with — for example, character lookup tools, quiz apps, or demo front-ends.
-
-The SDK in this package wraps the two main resource groupings exposed by the API: characters from the series and their associated Stands.`
-      entity_desc: {
-        character: "A person from the JoJo's Bizarre Adventure series — protagonists, antagonists, and supporting cast across the various Parts."
-        stand: "A Stand — the supernatural manifestation wielded by a Stand User in the series, typically linked to one or more characters."
-      }
-      auth: false
     }
   }
 }
+

@@ -102,6 +102,7 @@ def _stand_basic_setup(extra):
         "JOJOSBIZARRE_TEST_STAND_ENTID": idmap,
         "JOJOSBIZARRE_TEST_LIVE": "FALSE",
         "JOJOSBIZARRE_TEST_EXPLAIN": "FALSE",
+        "JOJOSBIZARRE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -112,6 +113,7 @@ def _stand_basic_setup(extra):
     if env.get("JOJOSBIZARRE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("JOJOSBIZARRE_APIKEY"),
             },
             extra or {},
         ])

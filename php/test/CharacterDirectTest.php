@@ -123,12 +123,14 @@ function character_direct_setup($mockres)
     $env = Runner::env_override([
         "JOJOSBIZARRE_TEST_CHARACTER_ENTID" => [],
         "JOJOSBIZARRE_TEST_LIVE" => "FALSE",
+        "JOJOSBIZARRE_APIKEY" => "NONE",
     ]);
 
     $live = $env["JOJOSBIZARRE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["JOJOSBIZARRE_APIKEY"],
         ];
         $client = new JojosBizarreSDK($merged_opts);
         return [

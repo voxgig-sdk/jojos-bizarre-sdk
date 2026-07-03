@@ -109,12 +109,14 @@ def _character_direct_setup(mockres):
     env = runner.env_override({
         "JOJOSBIZARRE_TEST_CHARACTER_ENTID": {},
         "JOJOSBIZARRE_TEST_LIVE": "FALSE",
+        "JOJOSBIZARRE_APIKEY": "NONE",
     })
 
     live = env.get("JOJOSBIZARRE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("JOJOSBIZARRE_APIKEY"),
         }
         client = JojosBizarreSDK(merged_opts)
         return {

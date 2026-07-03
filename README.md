@@ -1,16 +1,8 @@
 # JojosBizarre SDK
 
-Look up JoJo's Bizarre Adventure characters and their Stands
+Jojo's Bizarre API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Jojo's Bizarre API
-
-JoJo's Bizarre API is a community-built REST API that exposes data about characters and Stands from Hirohiko Araki's manga and anime series *JoJo's Bizarre Adventure*. The service is hosted at `https://stand-by-me.herokuapp.com`.
-
-It is aimed at fan projects, learning exercises, and tooling that needs a small, themed dataset to play with — for example, character lookup tools, quiz apps, or demo front-ends.
-
-The SDK in this package wraps the two main resource groupings exposed by the API: characters from the series and their associated Stands.
 
 ## Try it
 
@@ -44,29 +36,31 @@ gem install jojos-bizarre-sdk
 luarocks install jojos-bizarre-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { JojosBizarreSDK } from 'jojos-bizarre'
 
-const client = new JojosBizarreSDK({})
+const client = new JojosBizarreSDK({
+  apikey: process.env.JOJOS-BIZARRE_APIKEY,
+})
 
 // List all characters
 const characters = await client.Character().list()
+console.log(characters.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -96,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Character** | A person from the JoJo's Bizarre Adventure series — protagonists, antagonists, and supporting cast across the various Parts. | `/api/characters` |
-| **Stand** | A Stand — the supernatural manifestation wielded by a Stand User in the series, typically linked to one or more characters. | `/api/stands` |
+| **Character** |  | `/api/characters` |
+| **Stand** |  | `/api/stands` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -107,17 +101,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from jojosbizarre_sdk import JojosBizarreSDK
 
-client = JojosBizarreSDK({})
+client = JojosBizarreSDK({
+    "apikey": os.environ.get("JOJOS-BIZARRE_APIKEY"),
+})
 
 # List all characters
-characters, err = client.Character(None).list(None, None)
+characters, err = client.Character().list()
+print(characters)
 
 # Load a specific character
-character, err = client.Character(None).load(
-    {"id": "example_id"}, None
-)
+character, err = client.Character().load({"id": "example_id"})
+print(character)
 ```
 
 ### PHP
@@ -126,15 +123,17 @@ character, err = client.Character(None).load(
 <?php
 require_once 'jojosbizarre_sdk.php';
 
-$client = new JojosBizarreSDK([]);
+$client = new JojosBizarreSDK([
+    "apikey" => getenv("JOJOS-BIZARRE_APIKEY"),
+]);
 
 // List all characters
-[$characters, $err] = $client->Character(null)->list(null, null);
+[$characters, $err] = $client->Character()->list();
+print_r($characters);
 
 // Load a specific character
-[$character, $err] = $client->Character(null)->load(
-    ["id" => "example_id"], null
-);
+[$character, $err] = $client->Character()->load(["id" => "example_id"]);
+print_r($character);
 ```
 
 ### Golang
@@ -142,10 +141,13 @@ $client = new JojosBizarreSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/jojos-bizarre-sdk/go"
 
-client := sdk.NewJojosBizarreSDK(map[string]any{})
+client := sdk.NewJojosBizarreSDK(map[string]any{
+    "apikey": os.Getenv("JOJOS-BIZARRE_APIKEY"),
+})
 
 // List all characters
 characters, err := client.Character(nil).List(nil, nil)
+fmt.Println(characters)
 ```
 
 ### Ruby
@@ -153,15 +155,17 @@ characters, err := client.Character(nil).List(nil, nil)
 ```ruby
 require_relative "JojosBizarre_sdk"
 
-client = JojosBizarreSDK.new({})
+client = JojosBizarreSDK.new({
+  "apikey" => ENV["JOJOS-BIZARRE_APIKEY"],
+})
 
 # List all characters
-characters, err = client.Character(nil).list(nil, nil)
+characters, err = client.Character().list
+puts characters
 
 # Load a specific character
-character, err = client.Character(nil).load(
-  { "id" => "example_id" }, nil
-)
+character, err = client.Character().load({ "id" => "example_id" })
+puts character
 ```
 
 ### Lua
@@ -169,15 +173,17 @@ character, err = client.Character(nil).load(
 ```lua
 local sdk = require("jojos-bizarre_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("JOJOS-BIZARRE_APIKEY"),
+})
 
 -- List all characters
-local characters, err = client:Character(nil):list(nil, nil)
+local characters, err = client:Character():list()
+print(characters)
 
 -- Load a specific character
-local character, err = client:Character(nil):load(
-  { id = "example_id" }, nil
-)
+local character, err = client:Character():load({ id = "example_id" })
+print(character)
 ```
 
 ## Unit testing in offline mode
@@ -196,25 +202,21 @@ const result = await client.Character().load({ id: 'test01' })
 ### Python
 
 ```python
-client = JojosBizarreSDK.test(None, None)
-result, err = client.Character(None).load(
-    {"id": "test01"}, None
-)
+client = JojosBizarreSDK.test()
+result, err = client.Character().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = JojosBizarreSDK::test(null, null);
-[$result, $err] = $client->Character(null)->load(
-    ["id" => "test01"], null
-);
+$client = JojosBizarreSDK::test();
+[$result, $err] = $client->Character()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Character(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -223,19 +225,15 @@ result, err := client.Character(nil).Load(
 ### Ruby
 
 ```ruby
-client = JojosBizarreSDK.test(nil, nil)
-result, err = client.Character(nil).load(
-  { "id" => "test01" }, nil
-)
+client = JojosBizarreSDK.test
+result, err = client.Character().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Character(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Character():load({ id = "test01" })
 ```
 
 ## How it works
@@ -339,10 +337,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Jojo's Bizarre API
-
-- Upstream: [https://stand-by-me.herokuapp.com](https://stand-by-me.herokuapp.com)
 
 ---
 

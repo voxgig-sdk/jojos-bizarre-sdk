@@ -109,12 +109,14 @@ def _stand_direct_setup(mockres):
     env = runner.env_override({
         "JOJOSBIZARRE_TEST_STAND_ENTID": {},
         "JOJOSBIZARRE_TEST_LIVE": "FALSE",
+        "JOJOSBIZARRE_APIKEY": "NONE",
     })
 
     live = env.get("JOJOSBIZARRE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("JOJOSBIZARRE_APIKEY"),
         }
         client = JojosBizarreSDK(merged_opts)
         return {
