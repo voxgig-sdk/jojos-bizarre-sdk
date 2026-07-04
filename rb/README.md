@@ -28,16 +28,14 @@ require_relative "JojosBizarre_sdk"
 client = JojosBizarreSDK.new
 ```
 
-### 2. List characters
+### 2. List character records
 
 ```ruby
 begin
-  result = client.character.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Character records — iterate directly.
+  characters = client.Character.list
+  characters.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,8 +46,9 @@ end
 
 ```ruby
 begin
-  result = client.character.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Character record (raises on error).
+  character = client.Character.load({ "id" => "example_id" })
+  puts character
 rescue => err
   warn "load failed: #{err}"
 end
@@ -96,13 +95,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = JojosBizarreSDK.test
+client = JojosBizarreSDK.test({
+  "entity" => { "character" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.character.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+character = client.Character.load({ "id" => "test01" })
+puts character
 ```
 
 ### Use a custom fetch function
@@ -259,7 +262,7 @@ API path: `/api/stands`
 
 ### Character
 
-Create an instance: `const character = client.character`
+Create an instance: `character = client.Character`
 
 #### Operations
 
@@ -283,20 +286,22 @@ Create an instance: `const character = client.character`
 
 #### Example: Load
 
-```ts
-const character = await client.character.load({ id: 'character_id' })
+```ruby
+# load returns the bare Character record (raises on error).
+character = client.Character.load({ "id" => "character_id" })
 ```
 
 #### Example: List
 
-```ts
-const characters = await client.character.list()
+```ruby
+# list returns an Array of Character records (raises on error).
+characters = client.Character.list
 ```
 
 
 ### Stand
 
-Create an instance: `const stand = client.stand`
+Create an instance: `stand = client.Stand`
 
 #### Operations
 
@@ -320,14 +325,16 @@ Create an instance: `const stand = client.stand`
 
 #### Example: Load
 
-```ts
-const stand = await client.stand.load({ id: 'stand_id' })
+```ruby
+# load returns the bare Stand record (raises on error).
+stand = client.Stand.load({ "id" => "stand_id" })
 ```
 
 #### Example: List
 
-```ts
-const stands = await client.stand.list()
+```ruby
+# list returns an Array of Stand records (raises on error).
+stands = client.Stand.list
 ```
 
 
@@ -402,7 +409,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-character = client.character
+character = client.Character
 character.load({ "id" => "example_id" })
 
 # character.data_get now returns the loaded character data

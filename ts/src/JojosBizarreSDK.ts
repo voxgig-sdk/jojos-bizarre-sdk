@@ -205,28 +205,14 @@ class JojosBizarreSDK {
 
 
 
-  _character?: CharacterEntity
-
-  // Idiomatic facade: `client.character.list()` / `client.character.load({ id })`.
-  get character(): CharacterEntity {
-    return (this._character ??= new CharacterEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.character` instead. */
+  // Entity access: `client.Character().list()` / `client.Character().load({ id })`.
   Character(data?: any) {
     const self = this
     return new CharacterEntity(self,data)
   }
 
 
-  _stand?: StandEntity
-
-  // Idiomatic facade: `client.stand.list()` / `client.stand.load({ id })`.
-  get stand(): StandEntity {
-    return (this._stand ??= new StandEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.stand` instead. */
+  // Entity access: `client.Stand().list()` / `client.Stand().load({ id })`.
   Stand(data?: any) {
     const self = this
     return new StandEntity(self,data)

@@ -220,41 +220,21 @@ class JojosBizarreSDK:
         }
 
 
-    @property
-    def character(self):
-        """Idiomatic facade: client.character.list() / client.character.load({"id": ...})."""
-        from entity.character_entity import CharacterEntity
-        cached = getattr(self, "_character", None)
-        if cached is None:
-            cached = CharacterEntity(self, None)
-            self._character = cached
-        return cached
-
-    def Character(self, data=None):
-        # Deprecated: use client.character instead.
+    def Character(self, data=None) -> "CharacterEntity":
+        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
-    @property
-    def stand(self):
-        """Idiomatic facade: client.stand.list() / client.stand.load({"id": ...})."""
-        from entity.stand_entity import StandEntity
-        cached = getattr(self, "_stand", None)
-        if cached is None:
-            cached = StandEntity(self, None)
-            self._stand = cached
-        return cached
-
-    def Stand(self, data=None):
-        # Deprecated: use client.stand instead.
+    def Stand(self, data=None) -> "StandEntity":
+        """Entity factory: client.Stand().list({}) / client.Stand().load({"id": ...})."""
         from entity.stand_entity import StandEntity
         return StandEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "JojosBizarreSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class JojosBizarreSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.character_entity import CharacterEntity
+    from entity.stand_entity import StandEntity

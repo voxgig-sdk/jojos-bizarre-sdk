@@ -208,26 +208,14 @@ class JojosBizarreSDK
   end
 
 
-  # Idiomatic facade: client.character.list / client.character.load({ "id" => ... })
-  def character
-    require_relative 'entity/character_entity'
-    @character ||= CharacterEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.character instead.
+  # Canonical facade: client.Character.list / client.Character.load({ "id" => ... })
   def Character(data = nil)
     require_relative 'entity/character_entity'
     CharacterEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.stand.list / client.stand.load({ "id" => ... })
-  def stand
-    require_relative 'entity/stand_entity'
-    @stand ||= StandEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.stand instead.
+  # Canonical facade: client.Stand.list / client.Stand.load({ "id" => ... })
   def Stand(data = nil)
     require_relative 'entity/stand_entity'
     StandEntity.new(self, data)

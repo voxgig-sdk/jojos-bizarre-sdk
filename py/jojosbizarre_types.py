@@ -4,67 +4,65 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Character:
-    ability: Optional[list] = None
-    chapter: Optional[str] = None
-    id: Optional[str] = None
-    image: Optional[str] = None
-    japanese_name: Optional[str] = None
-    name: Optional[str] = None
-    nationality: Optional[str] = None
-    stand: Optional[str] = None
+class Character(TypedDict, total=False):
+    ability: list
+    chapter: str
+    id: str
+    image: str
+    japanese_name: str
+    name: str
+    nationality: str
+    stand: str
 
 
-@dataclass
-class CharacterLoadMatch:
+class CharacterLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class CharacterListMatch:
-    ability: Optional[list] = None
-    chapter: Optional[str] = None
-    id: Optional[str] = None
-    image: Optional[str] = None
-    japanese_name: Optional[str] = None
-    name: Optional[str] = None
-    nationality: Optional[str] = None
-    stand: Optional[str] = None
+class CharacterListMatch(TypedDict, total=False):
+    ability: list
+    chapter: str
+    id: str
+    image: str
+    japanese_name: str
+    name: str
+    nationality: str
+    stand: str
 
 
-@dataclass
-class Stand:
-    ability: Optional[list] = None
-    chapter: Optional[str] = None
-    id: Optional[str] = None
-    image: Optional[str] = None
-    japanese_name: Optional[str] = None
-    name: Optional[str] = None
-    type: Optional[str] = None
-    user: Optional[str] = None
+class Stand(TypedDict, total=False):
+    ability: list
+    chapter: str
+    id: str
+    image: str
+    japanese_name: str
+    name: str
+    type: str
+    user: str
 
 
-@dataclass
-class StandLoadMatch:
+class StandLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class StandListMatch:
-    ability: Optional[list] = None
-    chapter: Optional[str] = None
-    id: Optional[str] = None
-    image: Optional[str] = None
-    japanese_name: Optional[str] = None
-    name: Optional[str] = None
-    type: Optional[str] = None
-    user: Optional[str] = None
-
+class StandListMatch(TypedDict, total=False):
+    ability: list
+    chapter: str
+    id: str
+    image: str
+    japanese_name: str
+    name: str
+    type: str
+    user: str

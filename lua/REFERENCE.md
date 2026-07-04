@@ -87,7 +87,7 @@ same parameters as `direct()`.
 ## CharacterEntity
 
 ```lua
-local character = client:character(nil)
+local character = client:Character(nil)
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ local character = client:character(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:character():list()
+local results, err = client:Character():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -118,7 +118,7 @@ local results, err = client:character():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:character():load({ id = "character_id" })
+local result, err = client:Character():load({ id = "character_id" })
 ```
 
 ### Common Methods
@@ -154,7 +154,7 @@ Return the entity name.
 ## StandEntity
 
 ```lua
-local stand = client:stand(nil)
+local stand = client:Stand(nil)
 ```
 
 ### Fields
@@ -177,7 +177,7 @@ local stand = client:stand(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:stand():list()
+local results, err = client:Stand():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -185,7 +185,7 @@ local results, err = client:stand():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:stand():load({ id = "stand_id" })
+local result, err = client:Stand():load({ id = "stand_id" })
 ```
 
 ### Common Methods

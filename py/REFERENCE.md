@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## CharacterEntity
 
 ```python
-character = client.character
+character = client.Character()
 ```
 
 ### Fields
@@ -107,7 +107,9 @@ character = client.character
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.character.list({})
+results = client.Character().list({})
+for character in results:
+    print(character)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -115,7 +117,7 @@ results = client.character.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.character.load({"id": "character_id"})
+result = client.Character().load({"id": "character_id"})
 ```
 
 ### Common Methods
@@ -150,7 +152,7 @@ Return the entity name.
 ## StandEntity
 
 ```python
-stand = client.stand
+stand = client.Stand()
 ```
 
 ### Fields
@@ -173,7 +175,9 @@ stand = client.stand
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.stand.list({})
+results = client.Stand().list({})
+for stand in results:
+    print(stand)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -181,7 +185,7 @@ results = client.stand.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.stand.load({"id": "stand_id"})
+result = client.Stand().load({"id": "stand_id"})
 ```
 
 ### Common Methods
