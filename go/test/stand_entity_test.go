@@ -135,7 +135,6 @@ func standBasicSetup(extra map[string]any) *entityTestSetup {
 		"JOJOSBIZARRE_TEST_STAND_ENTID": idmap,
 		"JOJOSBIZARRE_TEST_LIVE":      "FALSE",
 		"JOJOSBIZARRE_TEST_EXPLAIN":   "FALSE",
-		"JOJOSBIZARRE_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["JOJOSBIZARRE_TEST_STAND_ENTID"])
@@ -146,7 +145,6 @@ func standBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["JOJOSBIZARRE_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["JOJOSBIZARRE_APIKEY"],
 			},
 			extra,
 		})

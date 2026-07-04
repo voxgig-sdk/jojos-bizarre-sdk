@@ -136,14 +136,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'JOJOSBIZARRE_TEST_CHARACTER_ENTID': {},
     'JOJOSBIZARRE_TEST_LIVE': 'FALSE',
-    'JOJOSBIZARRE_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.JOJOSBIZARRE_TEST_LIVE
 
   if (live) {
     const client = new JojosBizarreSDK({
-      apikey: env.JOJOSBIZARRE_APIKEY,
     })
 
     let idmap: any = env['JOJOSBIZARRE_TEST_CHARACTER_ENTID']

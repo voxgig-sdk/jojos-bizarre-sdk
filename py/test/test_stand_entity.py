@@ -50,16 +50,14 @@ class TestStandEntity:
         stand_ref01_ent = client.Stand(None)
         stand_ref01_match = {}
 
-        stand_ref01_list_result, err = stand_ref01_ent.list(stand_ref01_match, None)
-        assert err is None
+        stand_ref01_list_result = stand_ref01_ent.list(stand_ref01_match, None)
         assert isinstance(stand_ref01_list_result, list)
 
         # LOAD
         stand_ref01_match_dt0 = {
             "id": stand_ref01_data["id"],
         }
-        stand_ref01_data_dt0_loaded, err = stand_ref01_ent.load(stand_ref01_match_dt0, None)
-        assert err is None
+        stand_ref01_data_dt0_loaded = stand_ref01_ent.load(stand_ref01_match_dt0, None)
         stand_ref01_data_dt0_load_result = helpers.to_map(stand_ref01_data_dt0_loaded)
         assert stand_ref01_data_dt0_load_result is not None
         assert stand_ref01_data_dt0_load_result["id"] == stand_ref01_data["id"]
@@ -102,7 +100,6 @@ def _stand_basic_setup(extra):
         "JOJOSBIZARRE_TEST_STAND_ENTID": idmap,
         "JOJOSBIZARRE_TEST_LIVE": "FALSE",
         "JOJOSBIZARRE_TEST_EXPLAIN": "FALSE",
-        "JOJOSBIZARRE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -113,7 +110,6 @@ def _stand_basic_setup(extra):
     if env.get("JOJOSBIZARRE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JOJOSBIZARRE_APIKEY"),
             },
             extra or {},
         ])

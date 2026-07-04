@@ -43,16 +43,14 @@ class StandEntityTest < Minitest::Test
     stand_ref01_ent = client.Stand(nil)
     stand_ref01_match = {}
 
-    stand_ref01_list_result, err = stand_ref01_ent.list(stand_ref01_match, nil)
-    assert_nil err
+    stand_ref01_list_result = stand_ref01_ent.list(stand_ref01_match, nil)
     assert stand_ref01_list_result.is_a?(Array)
 
     # LOAD
     stand_ref01_match_dt0 = {
       "id" => stand_ref01_data["id"],
     }
-    stand_ref01_data_dt0_loaded, err = stand_ref01_ent.load(stand_ref01_match_dt0, nil)
-    assert_nil err
+    stand_ref01_data_dt0_loaded = stand_ref01_ent.load(stand_ref01_match_dt0, nil)
     stand_ref01_data_dt0_load_result = Helpers.to_map(stand_ref01_data_dt0_loaded)
     assert !stand_ref01_data_dt0_load_result.nil?
     assert_equal stand_ref01_data_dt0_load_result["id"], stand_ref01_data["id"]
@@ -93,7 +91,6 @@ def stand_basic_setup(extra)
     "JOJOSBIZARRE_TEST_STAND_ENTID" => idmap,
     "JOJOSBIZARRE_TEST_LIVE" => "FALSE",
     "JOJOSBIZARRE_TEST_EXPLAIN" => "FALSE",
-    "JOJOSBIZARRE_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -105,7 +102,6 @@ def stand_basic_setup(extra)
   if env["JOJOSBIZARRE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JOJOSBIZARRE_APIKEY"],
       },
       extra || {},
     ])

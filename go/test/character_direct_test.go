@@ -194,14 +194,12 @@ func characterDirectSetup(mockres any) *characterDirectSetupResult {
 	env := envOverride(map[string]any{
 		"JOJOSBIZARRE_TEST_CHARACTER_ENTID": map[string]any{},
 		"JOJOSBIZARRE_TEST_LIVE":    "FALSE",
-		"JOJOSBIZARRE_APIKEY":       "NONE",
 	})
 
 	live := env["JOJOSBIZARRE_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["JOJOSBIZARRE_APIKEY"],
 		}
 		client := sdk.NewJojosBizarreSDK(mergedOpts)
 

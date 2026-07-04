@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'JojosBizarre_types'
+
 
 class JojosBizarreSDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class JojosBizarreSDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class JojosBizarreSDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue JojosBizarreError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = JojosBizarreHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class JojosBizarreSDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,22 +198,36 @@ class JojosBizarreSDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.character.list / client.character.load({ "id" => ... })
+  def character
+    require_relative 'entity/character_entity'
+    @character ||= CharacterEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.character instead.
   def Character(data = nil)
     require_relative 'entity/character_entity'
     CharacterEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.stand.list / client.stand.load({ "id" => ... })
+  def stand
+    require_relative 'entity/stand_entity'
+    @stand ||= StandEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.stand instead.
   def Stand(data = nil)
     require_relative 'entity/stand_entity'
     StandEntity.new(self, data)

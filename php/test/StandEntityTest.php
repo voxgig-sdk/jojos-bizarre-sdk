@@ -50,16 +50,14 @@ class StandEntityTest extends TestCase
         $stand_ref01_ent = $client->Stand(null);
         $stand_ref01_match = [];
 
-        [$stand_ref01_list_result, $err] = $stand_ref01_ent->list($stand_ref01_match, null);
-        $this->assertNull($err);
+        $stand_ref01_list_result = $stand_ref01_ent->list($stand_ref01_match, null);
         $this->assertIsArray($stand_ref01_list_result);
 
         // LOAD
         $stand_ref01_match_dt0 = [
             "id" => $stand_ref01_data["id"],
         ];
-        [$stand_ref01_data_dt0_loaded, $err] = $stand_ref01_ent->load($stand_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $stand_ref01_data_dt0_loaded = $stand_ref01_ent->load($stand_ref01_match_dt0, null);
         $stand_ref01_data_dt0_load_result = Helpers::to_map($stand_ref01_data_dt0_loaded);
         $this->assertNotNull($stand_ref01_data_dt0_load_result);
         $this->assertEquals($stand_ref01_data_dt0_load_result["id"], $stand_ref01_data["id"]);
@@ -96,7 +94,6 @@ function stand_basic_setup($extra)
         "JOJOSBIZARRE_TEST_STAND_ENTID" => $idmap,
         "JOJOSBIZARRE_TEST_LIVE" => "FALSE",
         "JOJOSBIZARRE_TEST_EXPLAIN" => "FALSE",
-        "JOJOSBIZARRE_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -108,7 +105,6 @@ function stand_basic_setup($extra)
     if ($env["JOJOSBIZARRE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JOJOSBIZARRE_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -245,11 +245,17 @@ func (sdk *JojosBizarreSDK) Direct(fetchargs map[string]any) (map[string]any, er
 }
 
 
+// Character returns a Character entity bound to this client.
+// Idiomatic usage: client.Character(nil).List(nil, nil) or
+// client.Character(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JojosBizarreSDK) Character(data map[string]any) JojosBizarreEntity {
 	return NewCharacterEntityFunc(sdk, data)
 }
 
 
+// Stand returns a Stand entity bound to this client.
+// Idiomatic usage: client.Stand(nil).List(nil, nil) or
+// client.Stand(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JojosBizarreSDK) Stand(data map[string]any) JojosBizarreEntity {
 	return NewStandEntityFunc(sdk, data)
 }

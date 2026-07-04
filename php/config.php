@@ -20,9 +20,6 @@ class JojosBizarreConfig
             ],
             "options" => [
                 "base" => "https://stand-by-me.herokuapp.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -166,6 +163,7 @@ class JojosBizarreConfig
                         'orig' => 'id',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -329,6 +327,7 @@ class JojosBizarreConfig
                         'orig' => 'id',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                   ],

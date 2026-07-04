@@ -3,6 +3,8 @@
 import { CharacterEntity } from './entity/CharacterEntity'
 import { StandEntity } from './entity/StandEntity'
 
+export type * from './JojosBizarreTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -203,12 +205,28 @@ class JojosBizarreSDK {
 
 
 
+  _character?: CharacterEntity
+
+  // Idiomatic facade: `client.character.list()` / `client.character.load({ id })`.
+  get character(): CharacterEntity {
+    return (this._character ??= new CharacterEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.character` instead. */
   Character(data?: any) {
     const self = this
     return new CharacterEntity(self,data)
   }
 
 
+  _stand?: StandEntity
+
+  // Idiomatic facade: `client.stand.list()` / `client.stand.load({ id })`.
+  get stand(): StandEntity {
+    return (this._stand ??= new StandEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.stand` instead. */
   Stand(data?: any) {
     const self = this
     return new StandEntity(self,data)

@@ -120,7 +120,6 @@ function basicSetup(extra?: any) {
     'JOJOS_BIZARRE_TEST_STAND_ENTID': idmap,
     'JOJOS_BIZARRE_TEST_LIVE': 'FALSE',
     'JOJOS_BIZARRE_TEST_EXPLAIN': 'FALSE',
-    'JOJOS_BIZARRE_APIKEY': 'NONE',
   })
 
   idmap = env['JOJOS_BIZARRE_TEST_STAND_ENTID']
@@ -130,7 +129,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new JojosBizarreSDK(merge([
       {
-        apikey: env.JOJOS_BIZARRE_APIKEY,
       },
       extra
     ]))

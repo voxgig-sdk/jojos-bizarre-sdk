@@ -244,12 +244,38 @@ end
 
 
 
+-- Idiomatic facade: client:character():list() / client:character():load({ id = ... })
+function JojosBizarreSDK:character(data)
+  local EntityMod = require("entity.character_entity")
+  if data == nil then
+    if self._character == nil then
+      self._character = EntityMod.new(self, nil)
+    end
+    return self._character
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:character() instead.
 function JojosBizarreSDK:Character(data)
   local EntityMod = require("entity.character_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:stand():list() / client:stand():load({ id = ... })
+function JojosBizarreSDK:stand(data)
+  local EntityMod = require("entity.stand_entity")
+  if data == nil then
+    if self._stand == nil then
+      self._stand = EntityMod.new(self, nil)
+    end
+    return self._stand
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:stand() instead.
 function JojosBizarreSDK:Stand(data)
   local EntityMod = require("entity.stand_entity")
   return EntityMod.new(self, data)

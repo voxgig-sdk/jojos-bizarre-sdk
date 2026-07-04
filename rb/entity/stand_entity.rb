@@ -45,6 +45,7 @@ class StandEntity
     end
   end
 
+  # @return [Stand, Hash] the current Stand data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class StandEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Stand fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Stand.
+  #
+  # @param reqmatch [StandLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Stand, Hash] the loaded Stand; raises JojosBizarreError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
@@ -86,6 +93,11 @@ class StandEntity
 
 
   
+  # List Stand items matching the given filter.
+  #
+  # @param reqmatch [StandListMatch, Hash, nil] match filter (any subset of Stand fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Stand>, Array] the matching Stand items; raises JojosBizarreError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

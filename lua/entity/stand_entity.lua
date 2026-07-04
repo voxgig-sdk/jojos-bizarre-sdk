@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch StandLoadMatch
+---@param ctrl? table
+---@return Stand
+---@return string? err
 function StandEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch StandListMatch
+---@param ctrl? table
+---@return Stand[]
+---@return string? err
 function StandEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
