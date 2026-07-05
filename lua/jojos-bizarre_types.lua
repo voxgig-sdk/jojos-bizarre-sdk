@@ -20,6 +20,14 @@
 ---@field id string
 
 ---@class CharacterListMatch
+---@field ability? table
+---@field chapter? string
+---@field id? string
+---@field image? string
+---@field japanese_name? string
+---@field name? string
+---@field nationality? string
+---@field stand? string
 
 ---@class Stand
 ---@field ability? table
@@ -35,6 +43,14 @@
 ---@field id string
 
 ---@class StandListMatch
+---@field ability? table
+---@field chapter? string
+---@field id? string
+---@field image? string
+---@field japanese_name? string
+---@field name? string
+---@field type? string
+---@field user? string
 
 local M = {}
 

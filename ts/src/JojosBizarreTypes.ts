@@ -20,7 +20,16 @@ export interface CharacterLoadMatch {
   id: string
 }
 
-export type CharacterListMatch = Partial<Character>
+export interface CharacterListMatch {
+  ability?: any[]
+  chapter?: string
+  id?: string
+  image?: string
+  japanese_name?: string
+  name?: string
+  nationality?: string
+  stand?: string
+}
 
 export interface Stand {
   ability?: any[]
@@ -37,5 +46,14 @@ export interface StandLoadMatch {
   id: string
 }
 
-export type StandListMatch = Partial<Stand>
+export interface StandListMatch {
+  ability?: any[]
+  chapter?: string
+  id?: string
+  image?: string
+  japanese_name?: string
+  name?: string
+  type?: string
+  user?: string
+}
 

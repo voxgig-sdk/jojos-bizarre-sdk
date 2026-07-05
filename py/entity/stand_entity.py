@@ -65,8 +65,13 @@ class StandEntity:
         return vs.clone(self._match)
 
     
-    def load(self, reqmatch: StandLoadMatch, ctrl=None) -> Stand:
+    def load(self, reqmatch=None, ctrl=None) -> Stand:
         utility = self._utility
+        # reqmatch is optional: an entity with no id-like key loads with no
+        # match. Treat None as an empty match so client.Stand().load()
+        # works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "load",
             "ctrl": ctrl,
@@ -87,8 +92,12 @@ class StandEntity:
 
 
     
-    def list(self, reqmatch: StandListMatch, ctrl=None) -> list[Stand]:
+    def list(self, reqmatch=None, ctrl=None) -> list[Stand]:
         utility = self._utility
+        # reqmatch is optional: an omitted match lists all records. Treat None
+        # as an empty match so client.Stand().list() works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "list",
             "ctrl": ctrl,

@@ -54,7 +54,7 @@ CharacterLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Character#list (any subset of Character fields).
+# Request payload for Character#list.
 #
 # @!attribute [rw] ability
 #   @return [Array, nil]
@@ -137,7 +137,7 @@ StandLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Stand#list (any subset of Stand fields).
+# Request payload for Stand#list.
 #
 # @!attribute [rw] ability
 #   @return [Array, nil]

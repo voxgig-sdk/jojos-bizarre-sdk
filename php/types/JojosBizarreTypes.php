@@ -31,7 +31,7 @@ class CharacterLoadMatch
     public string $id;
 }
 
-/** Match filter for Character#list (any subset of Character fields). */
+/** Request payload for Character#list. */
 class CharacterListMatch
 {
     public ?array $ability = null;
@@ -63,7 +63,7 @@ class StandLoadMatch
     public string $id;
 }
 
-/** Match filter for Stand#list (any subset of Stand fields). */
+/** Request payload for Stand#list. */
 class StandListMatch
 {
     public ?array $ability = null;

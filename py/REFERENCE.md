@@ -8,7 +8,7 @@ Complete API reference for the JojosBizarre Python SDK.
 ### Constructor
 
 ```python
-from jojos-bizarre_sdk import JojosBizarreSDK
+from jojosbizarre_sdk import JojosBizarreSDK
 
 client = JojosBizarreSDK(options)
 ```
@@ -91,23 +91,23 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | ``$ARRAY`` | No |  |
-| `chapter` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image` | ``$STRING`` | No |  |
-| `japanese_name` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `nationality` | ``$STRING`` | No |  |
-| `stand` | ``$STRING`` | No |  |
+| `ability` | `list` | No |  |
+| `chapter` | `str` | No |  |
+| `id` | `str` | No |  |
+| `image` | `str` | No |  |
+| `japanese_name` | `str` | No |  |
+| `name` | `str` | No |  |
+| `nationality` | `str` | No |  |
+| `stand` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Character().list({})
+results = client.Character().list()
 for character in results:
     print(character)
 ```
@@ -159,23 +159,23 @@ stand = client.Stand()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | ``$ARRAY`` | No |  |
-| `chapter` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image` | ``$STRING`` | No |  |
-| `japanese_name` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
-| `user` | ``$STRING`` | No |  |
+| `ability` | `list` | No |  |
+| `chapter` | `str` | No |  |
+| `id` | `str` | No |  |
+| `image` | `str` | No |  |
+| `japanese_name` | `str` | No |  |
+| `name` | `str` | No |  |
+| `type` | `str` | No |  |
+| `user` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Stand().list({})
+results = client.Stand().list()
 for stand in results:
     print(stand)
 ```

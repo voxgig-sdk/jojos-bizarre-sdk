@@ -221,13 +221,13 @@ class JojosBizarreSDK:
 
 
     def Character(self, data=None) -> "CharacterEntity":
-        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
+        """Entity factory: client.Character().list() / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
     def Stand(self, data=None) -> "StandEntity":
-        """Entity factory: client.Stand().list({}) / client.Stand().load({"id": ...})."""
+        """Entity factory: client.Stand().list() / client.Stand().load({"id": ...})."""
         from entity.stand_entity import StandEntity
         return StandEntity(self, data)
 

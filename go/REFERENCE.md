@@ -101,14 +101,14 @@ character := client.Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | ``$ARRAY`` | No |  |
-| `chapter` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image` | ``$STRING`` | No |  |
-| `japanese_name` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `nationality` | ``$STRING`` | No |  |
-| `stand` | ``$STRING`` | No |  |
+| `ability` | `[]any` | No |  |
+| `chapter` | `string` | No |  |
+| `id` | `string` | No |  |
+| `image` | `string` | No |  |
+| `japanese_name` | `string` | No |  |
+| `name` | `string` | No |  |
+| `nationality` | `string` | No |  |
+| `stand` | `string` | No |  |
 
 ### Operations
 
@@ -162,14 +162,14 @@ stand := client.Stand(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | ``$ARRAY`` | No |  |
-| `chapter` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image` | ``$STRING`` | No |  |
-| `japanese_name` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
-| `user` | ``$STRING`` | No |  |
+| `ability` | `[]any` | No |  |
+| `chapter` | `string` | No |  |
+| `id` | `string` | No |  |
+| `image` | `string` | No |  |
+| `japanese_name` | `string` | No |  |
+| `name` | `string` | No |  |
+| `type` | `string` | No |  |
+| `user` | `string` | No |  |
 
 ### Operations
 
