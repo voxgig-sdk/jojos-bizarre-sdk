@@ -15,8 +15,10 @@ main: {
           url: "https://stand-by-me.herokuapp.com"
         }
       ]
+      summary: "This API provides access to detailed information about characters and stands from the Jojo's Bizarre Adventure series."
       title: "Jojo's Bizarre API"
       version: "1.0.0"
+      website: "https://stand-by-me.herokuapp.com"
     }
   }
 }
