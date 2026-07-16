@@ -27,7 +27,20 @@ func main() {
 }
 
 func run(args []string, in io.Reader, out, errOut io.Writer) int {
-	client := sdk.NewJojosBizarreSDK(nil)
+	// Configure from the environment: JOJOS_BIZARRE_APIKEY carries the API key and
+	// JOJOS_BIZARRE_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("JOJOS_BIZARRE_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("JOJOS_BIZARRE_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewJojosBizarreSDK(opts)
 
 	r, err := eng.NewRegistry()
 	if err != nil {
