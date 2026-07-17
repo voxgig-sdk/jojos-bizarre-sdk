@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- JojosBizarre SDK exists test
 
 local sdk = require("jojos-bizarre_sdk")
 
