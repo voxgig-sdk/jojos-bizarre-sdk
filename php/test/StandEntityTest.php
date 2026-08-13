@@ -72,7 +72,7 @@ class StandEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set JOJOSBIZARRE_TEST_STAND_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set JOJOS_BIZARRE_TEST_STAND_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -97,7 +97,7 @@ class StandEntityTest extends TestCase
             "id" => $stand_ref01_data["id"],
         ];
         $stand_ref01_data_dt0_loaded = $stand_ref01_ent->load($stand_ref01_match_dt0, null);
-        $stand_ref01_data_dt0_load_result = Helpers::to_map($stand_ref01_data_dt0_loaded);
+        $stand_ref01_data_dt0_load_result = Helpers::to_map(is_object($stand_ref01_data_dt0_loaded) && method_exists($stand_ref01_data_dt0_loaded, 'data_get') ? $stand_ref01_data_dt0_loaded->data_get() : $stand_ref01_data_dt0_loaded);
         $this->assertNotNull($stand_ref01_data_dt0_load_result);
         $this->assertEquals($stand_ref01_data_dt0_load_result["id"], $stand_ref01_data["id"]);
 
@@ -126,22 +126,22 @@ function stand_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("JOJOSBIZARRE_TEST_STAND_ENTID");
+    $entid_env_raw = getenv("JOJOS_BIZARRE_TEST_STAND_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "JOJOSBIZARRE_TEST_STAND_ENTID" => $idmap,
-        "JOJOSBIZARRE_TEST_LIVE" => "FALSE",
-        "JOJOSBIZARRE_TEST_EXPLAIN" => "FALSE",
+        "JOJOS_BIZARRE_TEST_STAND_ENTID" => $idmap,
+        "JOJOS_BIZARRE_TEST_LIVE" => "FALSE",
+        "JOJOS_BIZARRE_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["JOJOSBIZARRE_TEST_STAND_ENTID"]);
+        $env["JOJOS_BIZARRE_TEST_STAND_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["JOJOSBIZARRE_TEST_LIVE"] === "TRUE") {
+    if ($env["JOJOS_BIZARRE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -150,13 +150,13 @@ function stand_basic_setup($extra)
         $client = new JojosBizarreSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["JOJOSBIZARRE_TEST_LIVE"] === "TRUE";
+    $live = $env["JOJOS_BIZARRE_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["JOJOSBIZARRE_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["JOJOS_BIZARRE_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

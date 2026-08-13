@@ -91,11 +91,11 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `list` | No |  |
+| `abilities` | `list` | No |  |
 | `chapter` | `str` | No |  |
 | `id` | `str` | No |  |
 | `image` | `str` | No |  |
-| `japanese_name` | `str` | No |  |
+| `japaneseName` | `str` | No |  |
 | `name` | `str` | No |  |
 | `nationality` | `str` | No |  |
 | `stand` | `str` | No |  |
@@ -159,11 +159,11 @@ stand = client.Stand()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `list` | No |  |
+| `abilities` | `list` | No |  |
 | `chapter` | `str` | No |  |
 | `id` | `str` | No |  |
 | `image` | `str` | No |  |
-| `japanese_name` | `str` | No |  |
+| `japaneseName` | `str` | No |  |
 | `name` | `str` | No |  |
 | `type` | `str` | No |  |
 | `user` | `str` | No |  |

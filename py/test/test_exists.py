@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# JojosBizarre SDK exists test
 
 import pytest
 from jojosbizarre_sdk import JojosBizarreSDK

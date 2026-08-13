@@ -27,7 +27,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "ability",
+            ["name"] = "abilities",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 0,
@@ -55,7 +55,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "japanese_name",
+            ["name"] = "japaneseName",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 4,
@@ -120,6 +120,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/characters",
                 ["parts"] = {
@@ -161,6 +162,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/characters/{id}",
                 ["parts"] = {
@@ -191,7 +193,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "ability",
+            ["name"] = "abilities",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 0,
@@ -219,7 +221,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "japanese_name",
+            ["name"] = "japaneseName",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 4,
@@ -284,6 +286,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/stands",
                 ["parts"] = {
@@ -325,6 +328,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/stands/{id}",
                 ["parts"] = {

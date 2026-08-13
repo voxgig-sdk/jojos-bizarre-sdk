@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import JojosBizarreControl
-from core.error import JojosBizarreError
-from core.result import JojosBizarreResult
-from core.spec import JojosBizarreSpec
+from jojosbizarre_sdk.config import make_config
+from jojosbizarre_sdk.features import _make_feature
+from jojosbizarre_sdk.core.control import JojosBizarreControl
+from jojosbizarre_sdk.core.error import JojosBizarreError
+from jojosbizarre_sdk.core.result import JojosBizarreResult
+from jojosbizarre_sdk.core.spec import JojosBizarreSpec
 
 
 # True when this SDK was generated with the named feature.

@@ -27,7 +27,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "ability",
+						"name": "abilities",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 0,
@@ -55,7 +55,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "japanese_name",
+						"name": "japaneseName",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 4,
@@ -120,6 +120,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api/characters",
 								"parts": []any{
@@ -140,7 +141,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 					"load": map[string]any{
 						"input": "data",
@@ -161,6 +161,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api/characters/{id}",
 								"parts": []any{
@@ -180,7 +181,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -191,7 +191,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "ability",
+						"name": "abilities",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 0,
@@ -219,7 +219,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "japanese_name",
+						"name": "japaneseName",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 4,
@@ -284,6 +284,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api/stands",
 								"parts": []any{
@@ -304,7 +305,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 					"load": map[string]any{
 						"input": "data",
@@ -325,6 +325,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api/stands/{id}",
 								"parts": []any{
@@ -344,7 +345,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{

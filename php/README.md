@@ -38,7 +38,7 @@ try {
     // list() returns an array of Character records — iterate directly.
     $characters = $client->Character()->list();
     foreach ($characters as $item) {
-        echo $item["id"] . " " . $item["ability"] . "\n";
+        echo $item["id"] . " " . $item["abilities"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -49,7 +49,7 @@ try {
 
 ```php
 try {
-    // load() returns the bare Character record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Character record (throws on error).
     $character = $client->Character()->load(["id" => "example_id"]);
     print_r($character);
 } catch (\Throwable $err) {
@@ -140,7 +140,8 @@ $client = JojosBizarreSDK::test([
     "entity" => ["character" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $character = $client->Character()->list();
 print_r($character);
 ```
@@ -241,7 +242,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -263,11 +264,11 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `nationality` |  |
 | `stand` |  |
@@ -280,11 +281,11 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `type` |  |
 | `user` |  |
@@ -313,11 +314,11 @@ Create an instance: `$character = $client->Character();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `array` |  |
+| `abilities` | `array` |  |
 | `chapter` | `string` |  |
 | `id` | `string` |  |
 | `image` | `string` |  |
-| `japanese_name` | `string` |  |
+| `japaneseName` | `string` |  |
 | `name` | `string` |  |
 | `nationality` | `string` |  |
 | `stand` | `string` |  |
@@ -325,7 +326,7 @@ Create an instance: `$character = $client->Character();`
 #### Example: Load
 
 ```php
-// load() returns the bare Character record (throws on error).
+// load() returns the ENTITY — call data_get() for the Character record (throws on error).
 $character = $client->Character()->load(["id" => "character_id"]);
 ```
 
@@ -352,11 +353,11 @@ Create an instance: `$stand = $client->Stand();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `array` |  |
+| `abilities` | `array` |  |
 | `chapter` | `string` |  |
 | `id` | `string` |  |
 | `image` | `string` |  |
-| `japanese_name` | `string` |  |
+| `japaneseName` | `string` |  |
 | `name` | `string` |  |
 | `type` | `string` |  |
 | `user` | `string` |  |
@@ -364,7 +365,7 @@ Create an instance: `$stand = $client->Stand();`
 #### Example: Load
 
 ```php
-// load() returns the bare Stand record (throws on error).
+// load() returns the ENTITY — call data_get() for the Stand record (throws on error).
 $stand = $client->Stand()->load(["id" => "stand_id"]);
 ```
 

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from jojosbizarre_sdk.utility.voxgig_struct import voxgig_struct as vs
 from jojosbizarre_sdk import JojosBizarreSDK
-from core import helpers
+from jojosbizarre_sdk.core import helpers
 from test import runner
 
 
@@ -105,11 +105,11 @@ def _stand_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "JOJOSBIZARRE_TEST_STAND_ENTID": {},
-        "JOJOSBIZARRE_TEST_LIVE": "FALSE",
+        "JOJOS_BIZARRE_TEST_STAND_ENTID": {},
+        "JOJOS_BIZARRE_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("JOJOSBIZARRE_TEST_LIVE") == "TRUE"
+    live = env.get("JOJOS_BIZARRE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

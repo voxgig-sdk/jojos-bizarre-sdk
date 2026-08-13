@@ -28,7 +28,7 @@ module JojosBizarreConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "ability",
+              "name" => "abilities",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 0,
@@ -56,7 +56,7 @@ module JojosBizarreConfig
             },
             {
               "active" => true,
-              "name" => "japanese_name",
+              "name" => "japaneseName",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
@@ -121,6 +121,7 @@ module JojosBizarreConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/characters",
                   "parts" => [
@@ -162,6 +163,7 @@ module JojosBizarreConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/characters/{id}",
                   "parts" => [
@@ -192,7 +194,7 @@ module JojosBizarreConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "ability",
+              "name" => "abilities",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 0,
@@ -220,7 +222,7 @@ module JojosBizarreConfig
             },
             {
               "active" => true,
-              "name" => "japanese_name",
+              "name" => "japaneseName",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
@@ -285,6 +287,7 @@ module JojosBizarreConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/stands",
                   "parts" => [
@@ -326,6 +329,7 @@ module JojosBizarreConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/stands/{id}",
                   "parts" => [

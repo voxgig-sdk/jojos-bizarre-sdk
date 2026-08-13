@@ -97,11 +97,11 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `Array` | No |  |
+| `abilities` | `Array` | No |  |
 | `chapter` | `String` | No |  |
 | `id` | `String` | No |  |
 | `image` | `String` | No |  |
-| `japanese_name` | `String` | No |  |
+| `japaneseName` | `String` | No |  |
 | `name` | `String` | No |  |
 | `nationality` | `String` | No |  |
 | `stand` | `String` | No |  |
@@ -164,11 +164,11 @@ stand = client.Stand
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `Array` | No |  |
+| `abilities` | `Array` | No |  |
 | `chapter` | `String` | No |  |
 | `id` | `String` | No |  |
 | `image` | `String` | No |  |
-| `japanese_name` | `String` | No |  |
+| `japaneseName` | `String` | No |  |
 | `name` | `String` | No |  |
 | `type` | `String` | No |  |
 | `user` | `String` | No |  |

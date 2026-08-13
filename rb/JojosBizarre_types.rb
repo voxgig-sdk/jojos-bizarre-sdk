@@ -10,7 +10,7 @@
 
 # Character entity data model.
 #
-# @!attribute [rw] ability
+# @!attribute [rw] abilities
 #   @return [Array, nil]
 #
 # @!attribute [rw] chapter
@@ -22,7 +22,7 @@
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] japanese_name
+# @!attribute [rw] japaneseName
 #   @return [String, nil]
 #
 # @!attribute [rw] name
@@ -34,11 +34,11 @@
 # @!attribute [rw] stand
 #   @return [String, nil]
 Character = Struct.new(
-  :ability,
+  :abilities,
   :chapter,
   :id,
   :image,
-  :japanese_name,
+  :japaneseName,
   :name,
   :nationality,
   :stand,
@@ -56,7 +56,7 @@ CharacterLoadMatch = Struct.new(
 
 # Request payload for Character#list.
 #
-# @!attribute [rw] ability
+# @!attribute [rw] abilities
 #   @return [Array, nil]
 #
 # @!attribute [rw] chapter
@@ -68,7 +68,7 @@ CharacterLoadMatch = Struct.new(
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] japanese_name
+# @!attribute [rw] japaneseName
 #   @return [String, nil]
 #
 # @!attribute [rw] name
@@ -80,11 +80,11 @@ CharacterLoadMatch = Struct.new(
 # @!attribute [rw] stand
 #   @return [String, nil]
 CharacterListMatch = Struct.new(
-  :ability,
+  :abilities,
   :chapter,
   :id,
   :image,
-  :japanese_name,
+  :japaneseName,
   :name,
   :nationality,
   :stand,
@@ -93,7 +93,7 @@ CharacterListMatch = Struct.new(
 
 # Stand entity data model.
 #
-# @!attribute [rw] ability
+# @!attribute [rw] abilities
 #   @return [Array, nil]
 #
 # @!attribute [rw] chapter
@@ -105,7 +105,7 @@ CharacterListMatch = Struct.new(
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] japanese_name
+# @!attribute [rw] japaneseName
 #   @return [String, nil]
 #
 # @!attribute [rw] name
@@ -117,11 +117,11 @@ CharacterListMatch = Struct.new(
 # @!attribute [rw] user
 #   @return [String, nil]
 Stand = Struct.new(
-  :ability,
+  :abilities,
   :chapter,
   :id,
   :image,
-  :japanese_name,
+  :japaneseName,
   :name,
   :type,
   :user,
@@ -139,7 +139,7 @@ StandLoadMatch = Struct.new(
 
 # Request payload for Stand#list.
 #
-# @!attribute [rw] ability
+# @!attribute [rw] abilities
 #   @return [Array, nil]
 #
 # @!attribute [rw] chapter
@@ -151,7 +151,7 @@ StandLoadMatch = Struct.new(
 # @!attribute [rw] image
 #   @return [String, nil]
 #
-# @!attribute [rw] japanese_name
+# @!attribute [rw] japaneseName
 #   @return [String, nil]
 #
 # @!attribute [rw] name
@@ -163,11 +163,11 @@ StandLoadMatch = Struct.new(
 # @!attribute [rw] user
 #   @return [String, nil]
 StandListMatch = Struct.new(
-  :ability,
+  :abilities,
   :chapter,
   :id,
   :image,
-  :japanese_name,
+  :japaneseName,
   :name,
   :type,
   :user,

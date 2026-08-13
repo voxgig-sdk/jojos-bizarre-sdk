@@ -121,11 +121,11 @@ function character_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "JOJOSBIZARRE_TEST_CHARACTER_ENTID" => [],
-        "JOJOSBIZARRE_TEST_LIVE" => "FALSE",
+        "JOJOS_BIZARRE_TEST_CHARACTER_ENTID" => [],
+        "JOJOS_BIZARRE_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["JOJOSBIZARRE_TEST_LIVE"] === "TRUE";
+    $live = $env["JOJOS_BIZARRE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

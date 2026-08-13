@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import JojosBizarreSDK
-from core.error import JojosBizarreError
-from core.result import JojosBizarreResult
-from core.response import JojosBizarreResponse
-from core.spec import JojosBizarreSpec
-from feature.base_feature import JojosBizarreBaseFeature
+from projectname_sdk.core.error import JojosBizarreError
+from projectname_sdk.core.result import JojosBizarreResult
+from projectname_sdk.core.response import JojosBizarreResponse
+from projectname_sdk.core.spec import JojosBizarreSpec
+from projectname_sdk.feature.base_feature import JojosBizarreBaseFeature
 
 
 def _client():

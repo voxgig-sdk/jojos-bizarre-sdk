@@ -33,7 +33,7 @@ class JojosBizarreConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'ability',
+              'name' => 'abilities',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 0,
@@ -61,7 +61,7 @@ class JojosBizarreConfig
             ],
             [
               'active' => true,
-              'name' => 'japanese_name',
+              'name' => 'japaneseName',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
@@ -126,6 +126,7 @@ class JojosBizarreConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/characters',
                   'parts' => [
@@ -167,6 +168,7 @@ class JojosBizarreConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/characters/{id}',
                   'parts' => [
@@ -197,7 +199,7 @@ class JojosBizarreConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'ability',
+              'name' => 'abilities',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 0,
@@ -225,7 +227,7 @@ class JojosBizarreConfig
             ],
             [
               'active' => true,
-              'name' => 'japanese_name',
+              'name' => 'japaneseName',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
@@ -290,6 +292,7 @@ class JojosBizarreConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/stands',
                   'parts' => [
@@ -331,6 +334,7 @@ class JojosBizarreConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/stands/{id}',
                   'parts' => [

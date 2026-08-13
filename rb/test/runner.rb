@@ -23,8 +23,8 @@ module JojosBizarreTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("JOJOSBIZARRE_TEST_LIVE")
-    override = getenv("JOJOSBIZARRE_TEST_OVERRIDE")
+    live = getenv("JOJOS_BIZARRE_TEST_LIVE")
+    override = getenv("JOJOS_BIZARRE_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module JojosBizarreTestRunner
       end
     end
 
-    explain = getenv("JOJOSBIZARRE_TEST_EXPLAIN")
-    m["JOJOSBIZARRE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("JOJOS_BIZARRE_TEST_EXPLAIN")
+    m["JOJOS_BIZARRE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

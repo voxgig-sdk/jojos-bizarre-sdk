@@ -35,7 +35,9 @@ const client = new JojosBizarreSDK()
 
 ### 2. List character records
 
-`list()` resolves to an array of Character objects — iterate it directly:
+`list()` resolves to an array of Character ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const characters = await client.Character().list()
@@ -133,7 +135,8 @@ Create a mock client for unit testing — no server required:
 const client = JojosBizarreSDK.test()
 
 const character = await client.Character().list()
-// character is a bare entity populated with mock response data
+// character is the entity, populated with mock response data
+// — call character.data() for the record itself
 console.log(character)
 ```
 
@@ -300,11 +303,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `nationality` |  |
 | `stand` |  |
@@ -317,11 +320,11 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `type` |  |
 | `user` |  |
@@ -350,11 +353,11 @@ Create an instance: `const character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `any[]` |  |
+| `abilities` | `any[]` |  |
 | `chapter` | `string` |  |
 | `id` | `string` |  |
 | `image` | `string` |  |
-| `japanese_name` | `string` |  |
+| `japaneseName` | `string` |  |
 | `name` | `string` |  |
 | `nationality` | `string` |  |
 | `stand` | `string` |  |
@@ -387,11 +390,11 @@ Create an instance: `const stand = client.Stand()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `any[]` |  |
+| `abilities` | `any[]` |  |
 | `chapter` | `string` |  |
 | `id` | `string` |  |
 | `image` | `string` |  |
-| `japanese_name` | `string` |  |
+| `japaneseName` | `string` |  |
 | `name` | `string` |  |
 | `type` | `string` |  |
 | `user` | `string` |  |

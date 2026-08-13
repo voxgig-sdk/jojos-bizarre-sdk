@@ -128,11 +128,11 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `any[]` | No |  |
+| `abilities` | `any[]` | No |  |
 | `chapter` | `string` | No |  |
 | `id` | `string` | No |  |
 | `image` | `string` | No |  |
-| `japanese_name` | `string` | No |  |
+| `japaneseName` | `string` | No |  |
 | `name` | `string` | No |  |
 | `nationality` | `string` | No |  |
 | `stand` | `string` | No |  |
@@ -193,11 +193,11 @@ const stand = client.Stand()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `any[]` | No |  |
+| `abilities` | `any[]` | No |  |
 | `chapter` | `string` | No |  |
 | `id` | `string` | No |  |
 | `image` | `string` | No |  |
-| `japanese_name` | `string` | No |  |
+| `japaneseName` | `string` | No |  |
 | `name` | `string` | No |  |
 | `type` | `string` | No |  |
 | `user` | `string` | No |  |

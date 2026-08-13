@@ -15,11 +15,11 @@ declare(strict_types=1);
 /** Character entity data model. */
 class Character
 {
-    public ?array $ability = null;
+    public ?array $abilities = null;
     public ?string $chapter = null;
     public ?string $id = null;
     public ?string $image = null;
-    public ?string $japanese_name = null;
+    public ?string $japaneseName = null;
     public ?string $name = null;
     public ?string $nationality = null;
     public ?string $stand = null;
@@ -34,11 +34,11 @@ class CharacterLoadMatch
 /** Request payload for Character#list. */
 class CharacterListMatch
 {
-    public ?array $ability = null;
+    public ?array $abilities = null;
     public ?string $chapter = null;
     public ?string $id = null;
     public ?string $image = null;
-    public ?string $japanese_name = null;
+    public ?string $japaneseName = null;
     public ?string $name = null;
     public ?string $nationality = null;
     public ?string $stand = null;
@@ -47,11 +47,11 @@ class CharacterListMatch
 /** Stand entity data model. */
 class Stand
 {
-    public ?array $ability = null;
+    public ?array $abilities = null;
     public ?string $chapter = null;
     public ?string $id = null;
     public ?string $image = null;
-    public ?string $japanese_name = null;
+    public ?string $japaneseName = null;
     public ?string $name = null;
     public ?string $type = null;
     public ?string $user = null;
@@ -66,11 +66,11 @@ class StandLoadMatch
 /** Request payload for Stand#list. */
 class StandListMatch
 {
-    public ?array $ability = null;
+    public ?array $abilities = null;
     public ?string $chapter = null;
     public ?string $id = null;
     public ?string $image = null;
-    public ?string $japanese_name = null;
+    public ?string $japaneseName = null;
     public ?string $name = null;
     public ?string $type = null;
     public ?string $user = null;

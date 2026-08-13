@@ -2,31 +2,31 @@
   "existing": {
     "character": {
       "CHARACTER00": {
-        "ability": [],
+        "abilities": [],
         "chapter": "s51",
         "id": "CHARACTER00",
         "image": "s53",
-        "japanese_name": "s54",
+        "japaneseName": "s54",
         "name": "s55",
         "nationality": "s56",
         "stand": "s57"
       },
       "CHARACTER01": {
-        "ability": [],
+        "abilities": [],
         "chapter": "sa1",
         "id": "CHARACTER01",
         "image": "sa3",
-        "japanese_name": "sa4",
+        "japaneseName": "sa4",
         "name": "sa5",
         "nationality": "sa6",
         "stand": "sa7"
       },
       "CHARACTER02": {
-        "ability": [],
+        "abilities": [],
         "chapter": "sf1",
         "id": "CHARACTER02",
         "image": "sf3",
-        "japanese_name": "sf4",
+        "japaneseName": "sf4",
         "name": "sf5",
         "nationality": "sf6",
         "stand": "sf7"
@@ -36,10 +36,10 @@
   "new": {
     "character": {
       "character_ref01": {
-        "ability": [],
+        "abilities": [],
         "chapter": "s141",
         "image": "s143",
-        "japanese_name": "s144",
+        "japaneseName": "s144",
         "name": "s145",
         "nationality": "s146",
         "stand": "s147"

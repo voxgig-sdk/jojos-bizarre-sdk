@@ -96,11 +96,11 @@ $character = $client->Character();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `array` | No |  |
+| `abilities` | `array` | No |  |
 | `chapter` | `string` | No |  |
 | `id` | `string` | No |  |
 | `image` | `string` | No |  |
-| `japanese_name` | `string` | No |  |
+| `japaneseName` | `string` | No |  |
 | `name` | `string` | No |  |
 | `nationality` | `string` | No |  |
 | `stand` | `string` | No |  |
@@ -163,11 +163,11 @@ $stand = $client->Stand();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `array` | No |  |
+| `abilities` | `array` | No |  |
 | `chapter` | `string` | No |  |
 | `id` | `string` | No |  |
 | `image` | `string` | No |  |
-| `japanese_name` | `string` | No |  |
+| `japaneseName` | `string` | No |  |
 | `name` | `string` | No |  |
 | `type` | `string` | No |  |
 | `user` | `string` | No |  |

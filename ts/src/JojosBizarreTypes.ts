@@ -6,11 +6,11 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Character {
-  ability?: any[]
+  abilities?: any[]
   chapter?: string
   id?: string
   image?: string
-  japanese_name?: string
+  japaneseName?: string
   name?: string
   nationality?: string
   stand?: string
@@ -21,22 +21,22 @@ export interface CharacterLoadMatch {
 }
 
 export interface CharacterListMatch {
-  ability?: any[]
+  abilities?: any[]
   chapter?: string
   id?: string
   image?: string
-  japanese_name?: string
+  japaneseName?: string
   name?: string
   nationality?: string
   stand?: string
 }
 
 export interface Stand {
-  ability?: any[]
+  abilities?: any[]
   chapter?: string
   id?: string
   image?: string
-  japanese_name?: string
+  japaneseName?: string
   name?: string
   type?: string
   user?: string
@@ -47,11 +47,11 @@ export interface StandLoadMatch {
 }
 
 export interface StandListMatch {
-  ability?: any[]
+  abilities?: any[]
   chapter?: string
   id?: string
   image?: string
-  japanese_name?: string
+  japaneseName?: string
   name?: string
   type?: string
   user?: string

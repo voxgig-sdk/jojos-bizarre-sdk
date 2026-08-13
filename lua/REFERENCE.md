@@ -94,11 +94,11 @@ local character = client:Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `table` | No |  |
+| `abilities` | `table` | No |  |
 | `chapter` | `string` | No |  |
 | `id` | `string` | No |  |
 | `image` | `string` | No |  |
-| `japanese_name` | `string` | No |  |
+| `japaneseName` | `string` | No |  |
 | `name` | `string` | No |  |
 | `nationality` | `string` | No |  |
 | `stand` | `string` | No |  |
@@ -161,11 +161,11 @@ local stand = client:Stand(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `table` | No |  |
+| `abilities` | `table` | No |  |
 | `chapter` | `string` | No |  |
 | `id` | `string` | No |  |
 | `image` | `string` | No |  |
-| `japanese_name` | `string` | No |  |
+| `japaneseName` | `string` | No |  |
 | `name` | `string` | No |  |
 | `type` | `string` | No |  |
 | `user` | `string` | No |  |

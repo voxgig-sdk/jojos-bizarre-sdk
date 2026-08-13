@@ -62,7 +62,7 @@ class StandEntityTest < Minitest::Test
     # The basic flow consumes synthetic IDs from the fixture. In live mode
     # without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup[:synthetic_only]
-      skip "live entity test uses synthetic IDs from fixture — set JOJOSBIZARRE_TEST_STAND_ENTID JSON to run live"
+      skip "live entity test uses synthetic IDs from fixture — set JOJOS_BIZARRE_TEST_STAND_ENTID JSON to run live"
       return
     end
     client = setup[:client]
@@ -87,7 +87,7 @@ class StandEntityTest < Minitest::Test
       "id" => stand_ref01_data["id"],
     }
     stand_ref01_data_dt0_loaded = stand_ref01_ent.load(stand_ref01_match_dt0, nil)
-    stand_ref01_data_dt0_load_result = Helpers.to_map(stand_ref01_data_dt0_loaded)
+    stand_ref01_data_dt0_load_result = Helpers.to_map(stand_ref01_data_dt0_loaded.respond_to?(:data_get) ? stand_ref01_data_dt0_loaded.data_get : stand_ref01_data_dt0_loaded)
     assert !stand_ref01_data_dt0_load_result.nil?
     assert_equal stand_ref01_data_dt0_load_result["id"], stand_ref01_data["id"]
 
@@ -120,22 +120,22 @@ def stand_basic_setup(extra)
   # Detect ENTID env override before envOverride consumes it. When live
   # mode is on without a real override, the basic test runs against synthetic
   # IDs from the fixture and 4xx's. Surface this so the test can skip.
-  entid_env_raw = ENV["JOJOSBIZARRE_TEST_STAND_ENTID"]
+  entid_env_raw = ENV["JOJOS_BIZARRE_TEST_STAND_ENTID"]
   idmap_overridden = !entid_env_raw.nil? && entid_env_raw.strip.start_with?("{")
 
   env = Runner.env_override({
-    "JOJOSBIZARRE_TEST_STAND_ENTID" => idmap,
-    "JOJOSBIZARRE_TEST_LIVE" => "FALSE",
-    "JOJOSBIZARRE_TEST_EXPLAIN" => "FALSE",
+    "JOJOS_BIZARRE_TEST_STAND_ENTID" => idmap,
+    "JOJOS_BIZARRE_TEST_LIVE" => "FALSE",
+    "JOJOS_BIZARRE_TEST_EXPLAIN" => "FALSE",
   })
 
   idmap_resolved = Helpers.to_map(
-    env["JOJOSBIZARRE_TEST_STAND_ENTID"])
+    env["JOJOS_BIZARRE_TEST_STAND_ENTID"])
   if idmap_resolved.nil?
     idmap_resolved = Helpers.to_map(idmap)
   end
 
-  if env["JOJOSBIZARRE_TEST_LIVE"] == "TRUE"
+  if env["JOJOS_BIZARRE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
       },
@@ -144,13 +144,13 @@ def stand_basic_setup(extra)
     client = JojosBizarreSDK.new(Helpers.to_map(merged_opts))
   end
 
-  live = env["JOJOSBIZARRE_TEST_LIVE"] == "TRUE"
+  live = env["JOJOS_BIZARRE_TEST_LIVE"] == "TRUE"
   {
     client: client,
     data: entity_data,
     idmap: idmap_resolved,
     env: env,
-    explain: env["JOJOSBIZARRE_TEST_EXPLAIN"] == "TRUE",
+    explain: env["JOJOS_BIZARRE_TEST_EXPLAIN"] == "TRUE",
     live: live,
     synthetic_only: live && !idmap_overridden,
     now: (Time.now.to_f * 1000).to_i,

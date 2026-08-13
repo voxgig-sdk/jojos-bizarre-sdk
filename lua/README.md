@@ -242,11 +242,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `nationality` |  |
 | `stand` |  |
@@ -259,11 +259,11 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `type` |  |
 | `user` |  |
@@ -292,11 +292,11 @@ Create an instance: `local character = client:Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `table` |  |
+| `abilities` | `table` |  |
 | `chapter` | `string` |  |
 | `id` | `string` |  |
 | `image` | `string` |  |
-| `japanese_name` | `string` |  |
+| `japaneseName` | `string` |  |
 | `name` | `string` |  |
 | `nationality` | `string` |  |
 | `stand` | `string` |  |
@@ -329,11 +329,11 @@ Create an instance: `local stand = client:Stand(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `table` |  |
+| `abilities` | `table` |  |
 | `chapter` | `string` |  |
 | `id` | `string` |  |
 | `image` | `string` |  |
-| `japanese_name` | `string` |  |
+| `japaneseName` | `string` |  |
 | `name` | `string` |  |
 | `type` | `string` |  |
 | `user` | `string` |  |

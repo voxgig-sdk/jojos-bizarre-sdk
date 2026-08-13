@@ -6,7 +6,7 @@ main: kit: entity: character: {
 
   fields: [
     {
-      name: "ability"
+      name: "abilities"
       req: false
       type: "`$ARRAY`"
     }
@@ -26,7 +26,7 @@ main: kit: entity: character: {
       type: "`$STRING`"
     }
     {
-      name: "japanese_name"
+      name: "japaneseName"
       req: false
       type: "`$STRING`"
     }

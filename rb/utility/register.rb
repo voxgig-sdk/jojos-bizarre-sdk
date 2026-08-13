@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ JojosBizarreUtility.registrar = ->(u) {
   u.prepare_params = JojosBizarreUtilities::PrepareParams
   u.prepare_path = JojosBizarreUtilities::PreparePath
   u.prepare_query = JojosBizarreUtilities::PrepareQuery
+  u.graphql_body = JojosBizarreUtilities::GraphqlBody
+  u.graphql_errors = JojosBizarreUtilities::GraphqlErrors
   u.result_basic = JojosBizarreUtilities::ResultBasic
   u.result_body = JojosBizarreUtilities::ResultBody
   u.result_headers = JojosBizarreUtilities::ResultHeaders

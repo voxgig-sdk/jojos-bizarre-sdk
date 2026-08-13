@@ -2,31 +2,31 @@
   "existing": {
     "stand": {
       "STAND00": {
-        "ability": [],
+        "abilities": [],
         "chapter": "s51",
         "id": "STAND00",
         "image": "s53",
-        "japanese_name": "s54",
+        "japaneseName": "s54",
         "name": "s55",
         "type": "s56",
         "user": "s57"
       },
       "STAND01": {
-        "ability": [],
+        "abilities": [],
         "chapter": "sa1",
         "id": "STAND01",
         "image": "sa3",
-        "japanese_name": "sa4",
+        "japaneseName": "sa4",
         "name": "sa5",
         "type": "sa6",
         "user": "sa7"
       },
       "STAND02": {
-        "ability": [],
+        "abilities": [],
         "chapter": "sf1",
         "id": "STAND02",
         "image": "sf3",
-        "japanese_name": "sf4",
+        "japaneseName": "sf4",
         "name": "sf5",
         "type": "sf6",
         "user": "sf7"
@@ -36,10 +36,10 @@
   "new": {
     "stand": {
       "stand_ref01": {
-        "ability": [],
+        "abilities": [],
         "chapter": "s141",
         "image": "s143",
-        "japanese_name": "s144",
+        "japaneseName": "s144",
         "name": "s145",
         "type": "s146",
         "user": "s147"

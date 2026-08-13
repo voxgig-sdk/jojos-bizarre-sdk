@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'JojosBizarre',
   }
 
 
@@ -59,7 +59,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "ability",
+          "name": "abilities",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
@@ -87,7 +87,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "japanese_name",
+          "name": "japaneseName",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -152,6 +152,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/characters",
               "parts": [
@@ -193,6 +194,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/characters/{id}",
               "parts": [
@@ -223,7 +225,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "ability",
+          "name": "abilities",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
@@ -251,7 +253,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "japanese_name",
+          "name": "japaneseName",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -316,6 +318,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/stands",
               "parts": [
@@ -357,6 +360,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/stands/{id}",
               "parts": [

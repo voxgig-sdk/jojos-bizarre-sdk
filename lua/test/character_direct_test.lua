@@ -115,11 +115,11 @@ function character_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["JOJOSBIZARRE_TEST_CHARACTER_ENTID"] = {},
-    ["JOJOSBIZARRE_TEST_LIVE"] = "FALSE",
+    ["JOJOS_BIZARRE_TEST_CHARACTER_ENTID"] = {},
+    ["JOJOS_BIZARRE_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["JOJOSBIZARRE_TEST_LIVE"] == "TRUE"
+  local live = env["JOJOS_BIZARRE_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

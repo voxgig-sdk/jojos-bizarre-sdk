@@ -52,7 +52,7 @@ except Exception as err:
 
 ### 3. Load a character
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -136,7 +136,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = JojosBizarreSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 character = client.Character().list()
 # character contains the mock response record
 ```
@@ -234,7 +235,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -256,11 +257,11 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `nationality` |  |
 | `stand` |  |
@@ -273,11 +274,11 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `type` |  |
 | `user` |  |
@@ -306,11 +307,11 @@ Create an instance: `character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `list` |  |
+| `abilities` | `list` |  |
 | `chapter` | `str` |  |
 | `id` | `str` |  |
 | `image` | `str` |  |
-| `japanese_name` | `str` |  |
+| `japaneseName` | `str` |  |
 | `name` | `str` |  |
 | `nationality` | `str` |  |
 | `stand` | `str` |  |
@@ -343,11 +344,11 @@ Create an instance: `stand = client.Stand()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `list` |  |
+| `abilities` | `list` |  |
 | `chapter` | `str` |  |
 | `id` | `str` |  |
 | `image` | `str` |  |
-| `japanese_name` | `str` |  |
+| `japaneseName` | `str` |  |
 | `name` | `str` |  |
 | `type` | `str` |  |
 | `user` | `str` |  |

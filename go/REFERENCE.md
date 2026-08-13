@@ -102,11 +102,11 @@ fmt.Println(character.GetName()) // "character"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `[]any` | No |  |
+| `abilities` | `[]any` | No |  |
 | `chapter` | `string` | No |  |
 | `id` | `string` | No |  |
 | `image` | `string` | No |  |
-| `japanese_name` | `string` | No |  |
+| `japaneseName` | `string` | No |  |
 | `name` | `string` | No |  |
 | `nationality` | `string` | No |  |
 | `stand` | `string` | No |  |
@@ -172,11 +172,11 @@ fmt.Println(stand.GetName()) // "stand"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ability` | `[]any` | No |  |
+| `abilities` | `[]any` | No |  |
 | `chapter` | `string` | No |  |
 | `id` | `string` | No |  |
 | `image` | `string` | No |  |
-| `japanese_name` | `string` | No |  |
+| `japaneseName` | `string` | No |  |
 | `name` | `string` | No |  |
 | `type` | `string` | No |  |
 | `user` | `string` | No |  |

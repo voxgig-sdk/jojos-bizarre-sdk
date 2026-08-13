@@ -37,7 +37,7 @@ begin
   # list returns an Array of Character records — iterate directly.
   characters = client.Character.list
   characters.each do |item|
-    puts "#{item["id"]} #{item["ability"]}"
+    puts "#{item["id"]} #{item["abilities"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,7 +48,7 @@ end
 
 ```ruby
 begin
-  # load returns the bare Character record (raises on error).
+  # load returns the ENTITY — call data_get for the Character record (raises on error).
   character = client.Character.load({ "id" => "example_id" })
   puts character
 rescue => err
@@ -134,7 +134,8 @@ client = JojosBizarreSDK.test({
   "entity" => { "character" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 character = client.Character.list()
 puts character
 ```
@@ -253,11 +254,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `nationality` |  |
 | `stand` |  |
@@ -270,11 +271,11 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `ability` |  |
+| `abilities` |  |
 | `chapter` |  |
 | `id` |  |
 | `image` |  |
-| `japanese_name` |  |
+| `japaneseName` |  |
 | `name` |  |
 | `type` |  |
 | `user` |  |
@@ -303,11 +304,11 @@ Create an instance: `character = client.Character`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `Array` |  |
+| `abilities` | `Array` |  |
 | `chapter` | `String` |  |
 | `id` | `String` |  |
 | `image` | `String` |  |
-| `japanese_name` | `String` |  |
+| `japaneseName` | `String` |  |
 | `name` | `String` |  |
 | `nationality` | `String` |  |
 | `stand` | `String` |  |
@@ -315,7 +316,7 @@ Create an instance: `character = client.Character`
 #### Example: Load
 
 ```ruby
-# load returns the bare Character record (raises on error).
+# load returns the ENTITY — call data_get for the Character record (raises on error).
 character = client.Character.load({ "id" => "character_id" })
 ```
 
@@ -342,11 +343,11 @@ Create an instance: `stand = client.Stand`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ability` | `Array` |  |
+| `abilities` | `Array` |  |
 | `chapter` | `String` |  |
 | `id` | `String` |  |
 | `image` | `String` |  |
-| `japanese_name` | `String` |  |
+| `japaneseName` | `String` |  |
 | `name` | `String` |  |
 | `type` | `String` |  |
 | `user` | `String` |  |
@@ -354,7 +355,7 @@ Create an instance: `stand = client.Stand`
 #### Example: Load
 
 ```ruby
-# load returns the bare Stand record (raises on error).
+# load returns the ENTITY — call data_get for the Stand record (raises on error).
 stand = client.Stand.load({ "id" => "stand_id" })
 ```
 
