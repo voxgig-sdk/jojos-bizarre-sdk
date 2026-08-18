@@ -40,7 +40,7 @@ class JojosBizarreSDK
         $utility = new JojosBizarreUtility();
         $this->_utility = $utility;
 
-        $config = JojosBizarreConfig::make_config();
+        $config = JojosBizarreConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
