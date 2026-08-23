@@ -257,14 +257,14 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `abilities` |  |
-| `chapter` |  |
-| `id` |  |
-| `image` |  |
-| `japaneseName` |  |
-| `name` |  |
-| `nationality` |  |
-| `stand` |  |
+| `abilities` | List of character abilities |
+| `chapter` | Chapter/Part of the series the character appears in |
+| `id` | Unique identifier for the character |
+| `image` | URL to the character's image |
+| `japaneseName` | Japanese name of the character |
+| `name` | Name of the character |
+| `nationality` | Nationality of the character |
+| `stand` | Name of the character's stand, if applicable |
 
 Operations: List, Load.
 
@@ -274,14 +274,14 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `abilities` |  |
-| `chapter` |  |
-| `id` |  |
-| `image` |  |
-| `japaneseName` |  |
-| `name` |  |
-| `type` |  |
-| `user` |  |
+| `abilities` | List of stand abilities |
+| `chapter` | Chapter/Part of the series the stand appears in |
+| `id` | Unique identifier for the stand |
+| `image` | URL to the stand's image |
+| `japaneseName` | Japanese name of the stand |
+| `name` | Name of the stand |
+| `type` | Type or classification of the stand |
+| `user` | Name of the stand user |
 
 Operations: List, Load.
 
@@ -307,14 +307,14 @@ Create an instance: `character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `list` |  |
-| `chapter` | `str` |  |
-| `id` | `str` |  |
-| `image` | `str` |  |
-| `japaneseName` | `str` |  |
-| `name` | `str` |  |
-| `nationality` | `str` |  |
-| `stand` | `str` |  |
+| `abilities` | `list` | List of character abilities |
+| `chapter` | `str` | Chapter/Part of the series the character appears in |
+| `id` | `str` | Unique identifier for the character |
+| `image` | `str` | URL to the character's image |
+| `japaneseName` | `str` | Japanese name of the character |
+| `name` | `str` | Name of the character |
+| `nationality` | `str` | Nationality of the character |
+| `stand` | `str` | Name of the character's stand, if applicable |
 
 #### Example: Load
 
@@ -344,14 +344,14 @@ Create an instance: `stand = client.Stand()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `list` |  |
-| `chapter` | `str` |  |
-| `id` | `str` |  |
-| `image` | `str` |  |
-| `japaneseName` | `str` |  |
-| `name` | `str` |  |
-| `type` | `str` |  |
-| `user` | `str` |  |
+| `abilities` | `list` | List of stand abilities |
+| `chapter` | `str` | Chapter/Part of the series the stand appears in |
+| `id` | `str` | Unique identifier for the stand |
+| `image` | `str` | URL to the stand's image |
+| `japaneseName` | `str` | Japanese name of the stand |
+| `name` | `str` | Name of the stand |
+| `type` | `str` | Type or classification of the stand |
+| `user` | `str` | Name of the stand user |
 
 #### Example: Load
 

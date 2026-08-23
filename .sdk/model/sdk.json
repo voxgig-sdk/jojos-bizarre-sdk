@@ -36,48 +36,56 @@
               "active": true,
               "name": "abilities",
               "req": false,
+              "short": "List of character abilities",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "chapter",
               "req": false,
+              "short": "Chapter/Part of the series the character appears in",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "image",
               "req": false,
+              "short": "URL to the character's image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "japaneseName",
               "req": false,
+              "short": "Japanese name of the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nationality",
               "req": false,
+              "short": "Nationality of the character",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "stand",
               "req": false,
+              "short": "Name of the character's stand, if applicable",
               "type": "`$STRING`"
             }
           ],
@@ -197,48 +205,56 @@
               "active": true,
               "name": "abilities",
               "req": false,
+              "short": "List of stand abilities",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "chapter",
               "req": false,
+              "short": "Chapter/Part of the series the stand appears in",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the stand",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "image",
               "req": false,
+              "short": "URL to the stand's image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "japaneseName",
               "req": false,
+              "short": "Japanese name of the stand",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the stand",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Type or classification of the stand",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "user",
               "req": false,
+              "short": "Name of the stand user",
               "type": "`$STRING`"
             }
           ],

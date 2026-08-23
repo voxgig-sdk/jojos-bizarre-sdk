@@ -128,14 +128,14 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `any[]` | No |  |
-| `chapter` | `string` | No |  |
-| `id` | `string` | No |  |
-| `image` | `string` | No |  |
-| `japaneseName` | `string` | No |  |
-| `name` | `string` | No |  |
-| `nationality` | `string` | No |  |
-| `stand` | `string` | No |  |
+| `abilities` | `any[]` | No | List of character abilities |
+| `chapter` | `string` | No | Chapter/Part of the series the character appears in |
+| `id` | `string` | No | Unique identifier for the character |
+| `image` | `string` | No | URL to the character's image |
+| `japaneseName` | `string` | No | Japanese name of the character |
+| `name` | `string` | No | Name of the character |
+| `nationality` | `string` | No | Nationality of the character |
+| `stand` | `string` | No | Name of the character's stand, if applicable |
 
 ### Operations
 
@@ -193,14 +193,14 @@ const stand = client.Stand()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `any[]` | No |  |
-| `chapter` | `string` | No |  |
-| `id` | `string` | No |  |
-| `image` | `string` | No |  |
-| `japaneseName` | `string` | No |  |
-| `name` | `string` | No |  |
-| `type` | `string` | No |  |
-| `user` | `string` | No |  |
+| `abilities` | `any[]` | No | List of stand abilities |
+| `chapter` | `string` | No | Chapter/Part of the series the stand appears in |
+| `id` | `string` | No | Unique identifier for the stand |
+| `image` | `string` | No | URL to the stand's image |
+| `japaneseName` | `string` | No | Japanese name of the stand |
+| `name` | `string` | No | Name of the stand |
+| `type` | `string` | No | Type or classification of the stand |
+| `user` | `string` | No | Name of the stand user |
 
 ### Operations
 

@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "JojosBizarre",
+      slug = "jojos-bizarre",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -30,34 +33,42 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "abilities",
+            ["short"] = "List of character abilities",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "chapter",
+            ["short"] = "Chapter/Part of the series the character appears in",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "id",
+            ["short"] = "Unique identifier for the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "image",
+            ["short"] = "URL to the character's image",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "japaneseName",
+            ["short"] = "Japanese name of the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Name of the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "nationality",
+            ["short"] = "Nationality of the character",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "stand",
+            ["short"] = "Name of the character's stand, if applicable",
             ["type"] = "`$STRING`",
           },
         },
@@ -158,34 +169,42 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "abilities",
+            ["short"] = "List of stand abilities",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "chapter",
+            ["short"] = "Chapter/Part of the series the stand appears in",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "id",
+            ["short"] = "Unique identifier for the stand",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "image",
+            ["short"] = "URL to the stand's image",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "japaneseName",
+            ["short"] = "Japanese name of the stand",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Name of the stand",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "type",
+            ["short"] = "Type or classification of the stand",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "user",
+            ["short"] = "Name of the stand user",
             ["type"] = "`$STRING`",
           },
         },

@@ -254,14 +254,14 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `abilities` |  |
-| `chapter` |  |
-| `id` |  |
-| `image` |  |
-| `japaneseName` |  |
-| `name` |  |
-| `nationality` |  |
-| `stand` |  |
+| `abilities` | List of character abilities |
+| `chapter` | Chapter/Part of the series the character appears in |
+| `id` | Unique identifier for the character |
+| `image` | URL to the character's image |
+| `japaneseName` | Japanese name of the character |
+| `name` | Name of the character |
+| `nationality` | Nationality of the character |
+| `stand` | Name of the character's stand, if applicable |
 
 Operations: List, Load.
 
@@ -271,14 +271,14 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `abilities` |  |
-| `chapter` |  |
-| `id` |  |
-| `image` |  |
-| `japaneseName` |  |
-| `name` |  |
-| `type` |  |
-| `user` |  |
+| `abilities` | List of stand abilities |
+| `chapter` | Chapter/Part of the series the stand appears in |
+| `id` | Unique identifier for the stand |
+| `image` | URL to the stand's image |
+| `japaneseName` | Japanese name of the stand |
+| `name` | Name of the stand |
+| `type` | Type or classification of the stand |
+| `user` | Name of the stand user |
 
 Operations: List, Load.
 
@@ -304,14 +304,14 @@ Create an instance: `character = client.Character`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `Array` |  |
-| `chapter` | `String` |  |
-| `id` | `String` |  |
-| `image` | `String` |  |
-| `japaneseName` | `String` |  |
-| `name` | `String` |  |
-| `nationality` | `String` |  |
-| `stand` | `String` |  |
+| `abilities` | `Array` | List of character abilities |
+| `chapter` | `String` | Chapter/Part of the series the character appears in |
+| `id` | `String` | Unique identifier for the character |
+| `image` | `String` | URL to the character's image |
+| `japaneseName` | `String` | Japanese name of the character |
+| `name` | `String` | Name of the character |
+| `nationality` | `String` | Nationality of the character |
+| `stand` | `String` | Name of the character's stand, if applicable |
 
 #### Example: Load
 
@@ -343,14 +343,14 @@ Create an instance: `stand = client.Stand`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `Array` |  |
-| `chapter` | `String` |  |
-| `id` | `String` |  |
-| `image` | `String` |  |
-| `japaneseName` | `String` |  |
-| `name` | `String` |  |
-| `type` | `String` |  |
-| `user` | `String` |  |
+| `abilities` | `Array` | List of stand abilities |
+| `chapter` | `String` | Chapter/Part of the series the stand appears in |
+| `id` | `String` | Unique identifier for the stand |
+| `image` | `String` | URL to the stand's image |
+| `japaneseName` | `String` | Japanese name of the stand |
+| `name` | `String` | Name of the stand |
+| `type` | `String` | Type or classification of the stand |
+| `user` | `String` | Name of the stand user |
 
 #### Example: Load
 

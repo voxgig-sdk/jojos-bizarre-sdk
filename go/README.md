@@ -6,7 +6,7 @@ The Golang SDK for the JojosBizarre API — an entity-oriented client using stan
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Character(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -270,14 +270,14 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"abilities"` |  |
-| `"chapter"` |  |
-| `"id"` |  |
-| `"image"` |  |
-| `"japaneseName"` |  |
-| `"name"` |  |
-| `"nationality"` |  |
-| `"stand"` |  |
+| `"abilities"` | List of character abilities |
+| `"chapter"` | Chapter/Part of the series the character appears in |
+| `"id"` | Unique identifier for the character |
+| `"image"` | URL to the character's image |
+| `"japaneseName"` | Japanese name of the character |
+| `"name"` | Name of the character |
+| `"nationality"` | Nationality of the character |
+| `"stand"` | Name of the character's stand, if applicable |
 
 Operations: List, Load.
 
@@ -287,14 +287,14 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `"abilities"` |  |
-| `"chapter"` |  |
-| `"id"` |  |
-| `"image"` |  |
-| `"japaneseName"` |  |
-| `"name"` |  |
-| `"type"` |  |
-| `"user"` |  |
+| `"abilities"` | List of stand abilities |
+| `"chapter"` | Chapter/Part of the series the stand appears in |
+| `"id"` | Unique identifier for the stand |
+| `"image"` | URL to the stand's image |
+| `"japaneseName"` | Japanese name of the stand |
+| `"name"` | Name of the stand |
+| `"type"` | Type or classification of the stand |
+| `"user"` | Name of the stand user |
 
 Operations: List, Load.
 
@@ -320,14 +320,14 @@ Create an instance: `character := client.Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `[]any` |  |
-| `chapter` | `string` |  |
-| `id` | `string` |  |
-| `image` | `string` |  |
-| `japaneseName` | `string` |  |
-| `name` | `string` |  |
-| `nationality` | `string` |  |
-| `stand` | `string` |  |
+| `abilities` | `[]any` | List of character abilities |
+| `chapter` | `string` | Chapter/Part of the series the character appears in |
+| `id` | `string` | Unique identifier for the character |
+| `image` | `string` | URL to the character's image |
+| `japaneseName` | `string` | Japanese name of the character |
+| `name` | `string` | Name of the character |
+| `nationality` | `string` | Nationality of the character |
+| `stand` | `string` | Name of the character's stand, if applicable |
 
 #### Example: Load
 
@@ -365,14 +365,14 @@ Create an instance: `stand := client.Stand(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `[]any` |  |
-| `chapter` | `string` |  |
-| `id` | `string` |  |
-| `image` | `string` |  |
-| `japaneseName` | `string` |  |
-| `name` | `string` |  |
-| `type` | `string` |  |
-| `user` | `string` |  |
+| `abilities` | `[]any` | List of stand abilities |
+| `chapter` | `string` | Chapter/Part of the series the stand appears in |
+| `id` | `string` | Unique identifier for the stand |
+| `image` | `string` | URL to the stand's image |
+| `japaneseName` | `string` | Japanese name of the stand |
+| `name` | `string` | Name of the stand |
+| `type` | `string` | Type or classification of the stand |
+| `user` | `string` | Name of the stand user |
 
 #### Example: Load
 

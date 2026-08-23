@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -303,14 +303,14 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `abilities` |  |
-| `chapter` |  |
-| `id` |  |
-| `image` |  |
-| `japaneseName` |  |
-| `name` |  |
-| `nationality` |  |
-| `stand` |  |
+| `abilities` | List of character abilities |
+| `chapter` | Chapter/Part of the series the character appears in |
+| `id` | Unique identifier for the character |
+| `image` | URL to the character's image |
+| `japaneseName` | Japanese name of the character |
+| `name` | Name of the character |
+| `nationality` | Nationality of the character |
+| `stand` | Name of the character's stand, if applicable |
 
 Operations: list, load.
 
@@ -320,14 +320,14 @@ API path: `/api/characters`
 
 | Field | Description |
 | --- | --- |
-| `abilities` |  |
-| `chapter` |  |
-| `id` |  |
-| `image` |  |
-| `japaneseName` |  |
-| `name` |  |
-| `type` |  |
-| `user` |  |
+| `abilities` | List of stand abilities |
+| `chapter` | Chapter/Part of the series the stand appears in |
+| `id` | Unique identifier for the stand |
+| `image` | URL to the stand's image |
+| `japaneseName` | Japanese name of the stand |
+| `name` | Name of the stand |
+| `type` | Type or classification of the stand |
+| `user` | Name of the stand user |
 
 Operations: list, load.
 
@@ -353,14 +353,14 @@ Create an instance: `const character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `any[]` |  |
-| `chapter` | `string` |  |
-| `id` | `string` |  |
-| `image` | `string` |  |
-| `japaneseName` | `string` |  |
-| `name` | `string` |  |
-| `nationality` | `string` |  |
-| `stand` | `string` |  |
+| `abilities` | `any[]` | List of character abilities |
+| `chapter` | `string` | Chapter/Part of the series the character appears in |
+| `id` | `string` | Unique identifier for the character |
+| `image` | `string` | URL to the character's image |
+| `japaneseName` | `string` | Japanese name of the character |
+| `name` | `string` | Name of the character |
+| `nationality` | `string` | Nationality of the character |
+| `stand` | `string` | Name of the character's stand, if applicable |
 
 #### Example: Load
 
@@ -390,14 +390,14 @@ Create an instance: `const stand = client.Stand()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `abilities` | `any[]` |  |
-| `chapter` | `string` |  |
-| `id` | `string` |  |
-| `image` | `string` |  |
-| `japaneseName` | `string` |  |
-| `name` | `string` |  |
-| `type` | `string` |  |
-| `user` | `string` |  |
+| `abilities` | `any[]` | List of stand abilities |
+| `chapter` | `string` | Chapter/Part of the series the stand appears in |
+| `id` | `string` | Unique identifier for the stand |
+| `image` | `string` | URL to the stand's image |
+| `japaneseName` | `string` | Japanese name of the stand |
+| `name` | `string` | Name of the stand |
+| `type` | `string` | Type or classification of the stand |
+| `user` | `string` | Name of the stand user |
 
 #### Example: Load
 

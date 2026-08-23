@@ -91,14 +91,14 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `list` | No |  |
-| `chapter` | `str` | No |  |
-| `id` | `str` | No |  |
-| `image` | `str` | No |  |
-| `japaneseName` | `str` | No |  |
-| `name` | `str` | No |  |
-| `nationality` | `str` | No |  |
-| `stand` | `str` | No |  |
+| `abilities` | `list` | No | List of character abilities |
+| `chapter` | `str` | No | Chapter/Part of the series the character appears in |
+| `id` | `str` | No | Unique identifier for the character |
+| `image` | `str` | No | URL to the character's image |
+| `japaneseName` | `str` | No | Japanese name of the character |
+| `name` | `str` | No | Name of the character |
+| `nationality` | `str` | No | Nationality of the character |
+| `stand` | `str` | No | Name of the character's stand, if applicable |
 
 ### Operations
 
@@ -159,14 +159,14 @@ stand = client.Stand()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `list` | No |  |
-| `chapter` | `str` | No |  |
-| `id` | `str` | No |  |
-| `image` | `str` | No |  |
-| `japaneseName` | `str` | No |  |
-| `name` | `str` | No |  |
-| `type` | `str` | No |  |
-| `user` | `str` | No |  |
+| `abilities` | `list` | No | List of stand abilities |
+| `chapter` | `str` | No | Chapter/Part of the series the stand appears in |
+| `id` | `str` | No | Unique identifier for the stand |
+| `image` | `str` | No | URL to the stand's image |
+| `japaneseName` | `str` | No | Japanese name of the stand |
+| `name` | `str` | No | Name of the stand |
+| `type` | `str` | No | Type or classification of the stand |
+| `user` | `str` | No | Name of the stand user |
 
 ### Operations
 

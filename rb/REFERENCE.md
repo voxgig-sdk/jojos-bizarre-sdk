@@ -97,14 +97,14 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `Array` | No |  |
-| `chapter` | `String` | No |  |
-| `id` | `String` | No |  |
-| `image` | `String` | No |  |
-| `japaneseName` | `String` | No |  |
-| `name` | `String` | No |  |
-| `nationality` | `String` | No |  |
-| `stand` | `String` | No |  |
+| `abilities` | `Array` | No | List of character abilities |
+| `chapter` | `String` | No | Chapter/Part of the series the character appears in |
+| `id` | `String` | No | Unique identifier for the character |
+| `image` | `String` | No | URL to the character's image |
+| `japaneseName` | `String` | No | Japanese name of the character |
+| `name` | `String` | No | Name of the character |
+| `nationality` | `String` | No | Nationality of the character |
+| `stand` | `String` | No | Name of the character's stand, if applicable |
 
 ### Operations
 
@@ -164,14 +164,14 @@ stand = client.Stand
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `abilities` | `Array` | No |  |
-| `chapter` | `String` | No |  |
-| `id` | `String` | No |  |
-| `image` | `String` | No |  |
-| `japaneseName` | `String` | No |  |
-| `name` | `String` | No |  |
-| `type` | `String` | No |  |
-| `user` | `String` | No |  |
+| `abilities` | `Array` | No | List of stand abilities |
+| `chapter` | `String` | No | Chapter/Part of the series the stand appears in |
+| `id` | `String` | No | Unique identifier for the stand |
+| `image` | `String` | No | URL to the stand's image |
+| `japaneseName` | `String` | No | Japanese name of the stand |
+| `name` | `String` | No | Name of the stand |
+| `type` | `String` | No | Type or classification of the stand |
+| `user` | `String` | No | Name of the stand user |
 
 ### Operations
 

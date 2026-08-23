@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "JojosBizarre",
+			"slug": "jojos-bizarre",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,34 +37,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "abilities",
+						"short": "List of character abilities",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "chapter",
+						"short": "Chapter/Part of the series the character appears in",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "image",
+						"short": "URL to the character's image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "japaneseName",
+						"short": "Japanese name of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nationality",
+						"short": "Nationality of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "stand",
+						"short": "Name of the character's stand, if applicable",
 						"type": "`$STRING`",
 					},
 				},
@@ -162,34 +173,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "abilities",
+						"short": "List of stand abilities",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "chapter",
+						"short": "Chapter/Part of the series the stand appears in",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the stand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "image",
+						"short": "URL to the stand's image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "japaneseName",
+						"short": "Japanese name of the stand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the stand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Type or classification of the stand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "user",
+						"short": "Name of the stand user",
 						"type": "`$STRING`",
 					},
 				},

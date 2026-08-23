@@ -1,6 +1,6 @@
-# Entity: stand
+# Entity: character
 
-main: kit: entity: stand: {
+main: kit: entity: character: {
 
   alias: field: {}
 
@@ -8,41 +8,49 @@ main: kit: entity: stand: {
     {
       name: "abilities"
       req: false
+      short: "List of character abilities"
       type: "`$ARRAY`"
     }
     {
       name: "chapter"
       req: false
+      short: "Chapter/Part of the series the character appears in"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the character"
       type: "`$STRING`"
     }
     {
       name: "image"
       req: false
+      short: "URL to the character's image"
       type: "`$STRING`"
     }
     {
       name: "japaneseName"
       req: false
+      short: "Japanese name of the character"
       type: "`$STRING`"
     }
     {
       name: "name"
       req: false
+      short: "Name of the character"
       type: "`$STRING`"
     }
     {
-      name: "type"
+      name: "nationality"
       req: false
+      short: "Nationality of the character"
       type: "`$STRING`"
     }
     {
-      name: "user"
+      name: "stand"
       req: false
+      short: "Name of the character's stand, if applicable"
       type: "`$STRING`"
     }
   ]
@@ -52,7 +60,7 @@ main: kit: entity: stand: {
     name: "id"
   }
 
-  name: "stand"
+  name: "character"
   op: {
     list: {
       name: "list"
@@ -86,10 +94,10 @@ main: kit: entity: stand: {
             ]
           }
           method: "GET"
-          orig: "/api/stands"
+          orig: "/api/characters"
           parts: [
             "api"
-            "stands"
+            "characters"
           ]
           select: {
             exist: [
@@ -121,10 +129,10 @@ main: kit: entity: stand: {
             ]
           }
           method: "GET"
-          orig: "/api/stands/{id}"
+          orig: "/api/characters/{id}"
           parts: [
             "api"
-            "stands"
+            "characters"
             "{id}"
           ]
           select: {

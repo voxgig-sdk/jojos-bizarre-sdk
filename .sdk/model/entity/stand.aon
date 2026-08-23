@@ -1,6 +1,6 @@
-# Entity: character
+# Entity: stand
 
-main: kit: entity: character: {
+main: kit: entity: stand: {
 
   alias: field: {}
 
@@ -8,41 +8,49 @@ main: kit: entity: character: {
     {
       name: "abilities"
       req: false
+      short: "List of stand abilities"
       type: "`$ARRAY`"
     }
     {
       name: "chapter"
       req: false
+      short: "Chapter/Part of the series the stand appears in"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the stand"
       type: "`$STRING`"
     }
     {
       name: "image"
       req: false
+      short: "URL to the stand's image"
       type: "`$STRING`"
     }
     {
       name: "japaneseName"
       req: false
+      short: "Japanese name of the stand"
       type: "`$STRING`"
     }
     {
       name: "name"
       req: false
+      short: "Name of the stand"
       type: "`$STRING`"
     }
     {
-      name: "nationality"
+      name: "type"
       req: false
+      short: "Type or classification of the stand"
       type: "`$STRING`"
     }
     {
-      name: "stand"
+      name: "user"
       req: false
+      short: "Name of the stand user"
       type: "`$STRING`"
     }
   ]
@@ -52,7 +60,7 @@ main: kit: entity: character: {
     name: "id"
   }
 
-  name: "character"
+  name: "stand"
   op: {
     list: {
       name: "list"
@@ -86,10 +94,10 @@ main: kit: entity: character: {
             ]
           }
           method: "GET"
-          orig: "/api/characters"
+          orig: "/api/stands"
           parts: [
             "api"
-            "characters"
+            "stands"
           ]
           select: {
             exist: [
@@ -121,10 +129,10 @@ main: kit: entity: character: {
             ]
           }
           method: "GET"
-          orig: "/api/characters/{id}"
+          orig: "/api/stands/{id}"
           parts: [
             "api"
-            "characters"
+            "stands"
             "{id}"
           ]
           select: {
