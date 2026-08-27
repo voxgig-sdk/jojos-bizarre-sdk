@@ -28,6 +28,7 @@ module JojosBizarreConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
