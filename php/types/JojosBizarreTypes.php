@@ -34,14 +34,9 @@ class CharacterLoadMatch
 /** Request payload for Character#list. */
 class CharacterListMatch
 {
-    public ?array $abilities = null;
-    public ?string $chapter = null;
-    public ?string $id = null;
-    public ?string $image = null;
-    public ?string $japaneseName = null;
+    public ?int $limit = null;
     public ?string $name = null;
-    public ?string $nationality = null;
-    public ?string $stand = null;
+    public ?int $page = null;
 }
 
 /** Stand entity data model. */
@@ -66,13 +61,8 @@ class StandLoadMatch
 /** Request payload for Stand#list. */
 class StandListMatch
 {
-    public ?array $abilities = null;
-    public ?string $chapter = null;
-    public ?string $id = null;
-    public ?string $image = null;
-    public ?string $japaneseName = null;
+    public ?int $limit = null;
     public ?string $name = null;
-    public ?string $type = null;
-    public ?string $user = null;
+    public ?int $page = null;
 }
 

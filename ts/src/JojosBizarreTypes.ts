@@ -21,14 +21,9 @@ export interface CharacterLoadMatch {
 }
 
 export interface CharacterListMatch {
-  abilities?: any[]
-  chapter?: string
-  id?: string
-  image?: string
-  japaneseName?: string
+  limit?: number
   name?: string
-  nationality?: string
-  stand?: string
+  page?: number
 }
 
 export interface Stand {
@@ -47,13 +42,8 @@ export interface StandLoadMatch {
 }
 
 export interface StandListMatch {
-  abilities?: any[]
-  chapter?: string
-  id?: string
-  image?: string
-  japaneseName?: string
+  limit?: number
   name?: string
-  type?: string
-  user?: string
+  page?: number
 }
 

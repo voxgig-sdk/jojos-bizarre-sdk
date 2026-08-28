@@ -56,38 +56,18 @@ CharacterLoadMatch = Struct.new(
 
 # Request payload for Character#list.
 #
-# @!attribute [rw] abilities
-#   @return [Array, nil]
-#
-# @!attribute [rw] chapter
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] image
-#   @return [String, nil]
-#
-# @!attribute [rw] japaneseName
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] nationality
-#   @return [String, nil]
-#
-# @!attribute [rw] stand
-#   @return [String, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 CharacterListMatch = Struct.new(
-  :abilities,
-  :chapter,
-  :id,
-  :image,
-  :japaneseName,
+  :limit,
   :name,
-  :nationality,
-  :stand,
+  :page,
   keyword_init: true
 )
 
@@ -139,38 +119,18 @@ StandLoadMatch = Struct.new(
 
 # Request payload for Stand#list.
 #
-# @!attribute [rw] abilities
-#   @return [Array, nil]
-#
-# @!attribute [rw] chapter
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] image
-#   @return [String, nil]
-#
-# @!attribute [rw] japaneseName
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] type
-#   @return [String, nil]
-#
-# @!attribute [rw] user
-#   @return [String, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 StandListMatch = Struct.new(
-  :abilities,
-  :chapter,
-  :id,
-  :image,
-  :japaneseName,
+  :limit,
   :name,
-  :type,
-  :user,
+  :page,
   keyword_init: true
 )
 

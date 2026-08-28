@@ -32,14 +32,9 @@ class CharacterLoadMatch(TypedDict):
 
 
 class CharacterListMatch(TypedDict, total=False):
-    abilities: list
-    chapter: str
-    id: str
-    image: str
-    japaneseName: str
+    limit: int
     name: str
-    nationality: str
-    stand: str
+    page: int
 
 
 class Stand(TypedDict, total=False):
@@ -58,11 +53,6 @@ class StandLoadMatch(TypedDict):
 
 
 class StandListMatch(TypedDict, total=False):
-    abilities: list
-    chapter: str
-    id: str
-    image: str
-    japaneseName: str
+    limit: int
     name: str
-    type: str
-    user: str
+    page: int
