@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -85,6 +96,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "image",
           "short": "URL to the character's image",
           "type": "`$STRING`"
@@ -110,6 +122,10 @@ class Config {
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "character",
       "op": {
         "list": {
@@ -144,9 +160,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/characters",
-              "parts": [
-                "api",
-                "characters"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "characters"
+                }
               ],
               "select": {
                 "exist": [
@@ -158,7 +178,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "characters"
+              ]
             }
           ]
         },
@@ -181,10 +205,16 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/characters/{id}",
-              "parts": [
-                "api",
-                "characters",
-                "{id}"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "characters"
+                },
+                {
+                  "var": "id"
+                }
               ],
               "select": {
                 "exist": [
@@ -194,7 +224,12 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "characters",
+                "{id}"
+              ]
             }
           ]
         }
@@ -221,6 +256,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "image",
           "short": "URL to the stand's image",
           "type": "`$STRING`"
@@ -246,6 +282,10 @@ class Config {
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "stand",
       "op": {
         "list": {
@@ -280,9 +320,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/stands",
-              "parts": [
-                "api",
-                "stands"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "stands"
+                }
               ],
               "select": {
                 "exist": [
@@ -294,7 +338,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "stands"
+              ]
             }
           ]
         },
@@ -317,10 +365,16 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/stands/{id}",
-              "parts": [
-                "api",
-                "stands",
-                "{id}"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "stands"
+                },
+                {
+                  "var": "id"
+                }
               ],
               "select": {
                 "exist": [
@@ -330,7 +384,12 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "stands",
+                "{id}"
+              ]
             }
           ]
         }
@@ -346,6 +405,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

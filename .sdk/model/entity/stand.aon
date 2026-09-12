@@ -24,6 +24,7 @@ main: kit: entity: stand: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "image"
       req: false
       short: "URL to the stand's image"
@@ -95,9 +96,13 @@ main: kit: entity: stand: {
           }
           method: "GET"
           orig: "/api/stands"
-          parts: [
-            "api"
-            "stands"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "stands"
+            }
           ]
           select: {
             exist: [
@@ -130,10 +135,16 @@ main: kit: entity: stand: {
           }
           method: "GET"
           orig: "/api/stands/{id}"
-          parts: [
-            "api"
-            "stands"
-            "{id}"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "stands"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

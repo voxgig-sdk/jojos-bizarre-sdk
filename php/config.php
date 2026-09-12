@@ -74,6 +74,7 @@ class JojosBizarreConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'image',
               'short' => 'URL to the character\'s image',
               'type' => '`$STRING`',
@@ -98,6 +99,10 @@ class JojosBizarreConfig
               'short' => 'Name of the character\'s stand, if applicable',
               'type' => '`$STRING`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'character',
           'op' => [
@@ -133,9 +138,13 @@ class JojosBizarreConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/characters',
-                  'parts' => [
-                    'api',
-                    'characters',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'characters',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -147,6 +156,10 @@ class JojosBizarreConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'characters',
                   ],
                 ],
               ],
@@ -170,10 +183,16 @@ class JojosBizarreConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/characters/{id}',
-                  'parts' => [
-                    'api',
-                    'characters',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'characters',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -183,6 +202,11 @@ class JojosBizarreConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'characters',
+                    '{id}',
                   ],
                 ],
               ],
@@ -210,6 +234,7 @@ class JojosBizarreConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'image',
               'short' => 'URL to the stand\'s image',
               'type' => '`$STRING`',
@@ -234,6 +259,10 @@ class JojosBizarreConfig
               'short' => 'Name of the stand user',
               'type' => '`$STRING`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'stand',
           'op' => [
@@ -269,9 +298,13 @@ class JojosBizarreConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/stands',
-                  'parts' => [
-                    'api',
-                    'stands',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'stands',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -283,6 +316,10 @@ class JojosBizarreConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'stands',
                   ],
                 ],
               ],
@@ -306,10 +343,16 @@ class JojosBizarreConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/stands/{id}',
-                  'parts' => [
-                    'api',
-                    'stands',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'stands',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -319,6 +362,11 @@ class JojosBizarreConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'stands',
+                    '{id}',
                   ],
                 ],
               ],

@@ -1,6 +1,14 @@
 # JojosBizarre SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -69,6 +77,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "image",
             "short": "URL to the character's image",
             "type": "`$STRING`",
@@ -94,6 +103,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "character",
         "op": {
           "list": {
@@ -128,9 +141,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/characters",
-                "parts": [
-                  "api",
-                  "characters",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "characters",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -143,6 +160,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "characters",
+                ],
               },
             ],
           },
@@ -165,10 +186,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/characters/{id}",
-                "parts": [
-                  "api",
-                  "characters",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "characters",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -179,6 +206,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "characters",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -205,6 +237,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "image",
             "short": "URL to the stand's image",
             "type": "`$STRING`",
@@ -230,6 +263,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "stand",
         "op": {
           "list": {
@@ -264,9 +301,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/stands",
-                "parts": [
-                  "api",
-                  "stands",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "stands",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -279,6 +320,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "stands",
+                ],
               },
             ],
           },
@@ -301,10 +346,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/stands/{id}",
-                "parts": [
-                  "api",
-                  "stands",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "stands",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -315,6 +366,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "stands",
+                  "{id}",
+                ],
               },
             ],
           },

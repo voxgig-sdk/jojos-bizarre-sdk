@@ -48,6 +48,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "image",
             ["short"] = "URL to the character's image",
             ["type"] = "`$STRING`",
@@ -72,6 +73,10 @@ local function make_config()
             ["short"] = "Name of the character's stand, if applicable",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "character",
         ["op"] = {
@@ -107,9 +112,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/characters",
-                ["parts"] = {
-                  "api",
-                  "characters",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "characters",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -121,6 +130,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "characters",
                 },
               },
             },
@@ -144,10 +157,16 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/characters/{id}",
-                ["parts"] = {
-                  "api",
-                  "characters",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "characters",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -157,6 +176,11 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "characters",
+                  "{id}",
                 },
               },
             },
@@ -184,6 +208,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "image",
             ["short"] = "URL to the stand's image",
             ["type"] = "`$STRING`",
@@ -208,6 +233,10 @@ local function make_config()
             ["short"] = "Name of the stand user",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "stand",
         ["op"] = {
@@ -243,9 +272,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/stands",
-                ["parts"] = {
-                  "api",
-                  "stands",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "stands",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -257,6 +290,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "stands",
                 },
               },
             },
@@ -280,10 +317,16 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/stands/{id}",
-                ["parts"] = {
-                  "api",
-                  "stands",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "stands",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -293,6 +336,11 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "stands",
+                  "{id}",
                 },
               },
             },

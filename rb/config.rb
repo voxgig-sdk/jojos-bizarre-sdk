@@ -60,6 +60,7 @@ module JojosBizarreConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "image",
               "short" => "URL to the character's image",
               "type" => "`$STRING`",
@@ -85,6 +86,10 @@ module JojosBizarreConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "character",
           "op" => {
             "list" => {
@@ -119,9 +124,13 @@ module JojosBizarreConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/characters",
-                  "parts" => [
-                    "api",
-                    "characters",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "characters",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -134,6 +143,10 @@ module JojosBizarreConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "api",
+                    "characters",
+                  ],
                 },
               ],
             },
@@ -156,10 +169,16 @@ module JojosBizarreConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/characters/{id}",
-                  "parts" => [
-                    "api",
-                    "characters",
-                    "{id}",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "characters",
+                    },
+                    {
+                      "var" => "id",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -170,6 +189,11 @@ module JojosBizarreConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "api",
+                    "characters",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -196,6 +220,7 @@ module JojosBizarreConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "image",
               "short" => "URL to the stand's image",
               "type" => "`$STRING`",
@@ -221,6 +246,10 @@ module JojosBizarreConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "stand",
           "op" => {
             "list" => {
@@ -255,9 +284,13 @@ module JojosBizarreConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/stands",
-                  "parts" => [
-                    "api",
-                    "stands",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "stands",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -270,6 +303,10 @@ module JojosBizarreConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "api",
+                    "stands",
+                  ],
                 },
               ],
             },
@@ -292,10 +329,16 @@ module JojosBizarreConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/stands/{id}",
-                  "parts" => [
-                    "api",
-                    "stands",
-                    "{id}",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "stands",
+                    },
+                    {
+                      "var" => "id",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -306,6 +349,11 @@ module JojosBizarreConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "api",
+                    "stands",
+                    "{id}",
+                  ],
                 },
               ],
             },
