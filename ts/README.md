@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { JojosBizarreSDK } from '@voxgig-sdk/jojos-bizarre'
+import { JojosBizarreSDK } from '@voxgig-sdk/jojos-bizarre-sdk'
 
 const client = new JojosBizarreSDK()
 ```
@@ -494,7 +494,7 @@ jojos-bizarre/
 Import the SDK from the package root:
 
 ```ts
-import { JojosBizarreSDK } from '@voxgig-sdk/jojos-bizarre'
+import { JojosBizarreSDK } from '@voxgig-sdk/jojos-bizarre-sdk'
 ```
 
 ### Entity state

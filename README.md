@@ -105,7 +105,7 @@ local results, err = client:Character():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
+| TypeScript | `@voxgig-sdk/jojos-bizarre-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
 | Python | `voxgig-sdk-jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
 | PHP | `voxgig-sdk/jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/jojos-bizarre-sdk/go` | `go get github.com/voxgig-sdk/jojos-bizarre-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Character():list()
 ### TypeScript
 
 ```ts
-import { JojosBizarreSDK } from '@voxgig-sdk/jojos-bizarre'
+import { JojosBizarreSDK } from '@voxgig-sdk/jojos-bizarre-sdk'
 
 const client = new JojosBizarreSDK()
 
