@@ -45,5 +45,183 @@
         "stand": "s147"
       }
     }
+  },
+  "requests": {
+    "GET /api/characters": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getAllCharacters",
+        "parameters": [
+          {
+            "description": "Page number for pagination",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Number of results per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter characters by name",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "abilities": {
+                        "description": "List of character abilities",
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "chapter": {
+                        "description": "Chapter/Part of the series the character appears in",
+                        "type": "string"
+                      },
+                      "id": {
+                        "description": "Unique identifier for the character",
+                        "type": "string"
+                      },
+                      "image": {
+                        "description": "URL to the character's image",
+                        "format": "uri",
+                        "type": "string"
+                      },
+                      "japaneseName": {
+                        "description": "Japanese name of the character",
+                        "type": "string"
+                      },
+                      "name": {
+                        "description": "Name of the character",
+                        "type": "string"
+                      },
+                      "nationality": {
+                        "description": "Nationality of the character",
+                        "type": "string"
+                      },
+                      "stand": {
+                        "description": "Name of the character's stand, if applicable",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response with list of characters"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /api/characters/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCharacterById",
+        "parameters": [
+          {
+            "description": "Unique identifier of the character",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "abilities": {
+                      "description": "List of character abilities",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "chapter": {
+                      "description": "Chapter/Part of the series the character appears in",
+                      "type": "string"
+                    },
+                    "id": {
+                      "description": "Unique identifier for the character",
+                      "type": "string"
+                    },
+                    "image": {
+                      "description": "URL to the character's image",
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "japaneseName": {
+                      "description": "Japanese name of the character",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the character",
+                      "type": "string"
+                    },
+                    "nationality": {
+                      "description": "Nationality of the character",
+                      "type": "string"
+                    },
+                    "stand": {
+                      "description": "Name of the character's stand, if applicable",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with character details"
+          },
+          "404": {
+            "description": "Character not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

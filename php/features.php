@@ -4,7 +4,10 @@ declare(strict_types=1);
 // JojosBizarre SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class JojosBizarreFeatures
@@ -14,8 +17,14 @@ class JojosBizarreFeatures
         switch ($name) {
             case "base":
                 return new JojosBizarreBaseFeature();
+            case "ratelimit":
+                return new JojosBizarreRatelimitFeature();
+            case "retry":
+                return new JojosBizarreRetryFeature();
             case "test":
                 return new JojosBizarreTestFeature();
+            case "timeout":
+                return new JojosBizarreTimeoutFeature();
             default:
                 return new JojosBizarreBaseFeature();
         }
@@ -31,7 +40,10 @@ class JojosBizarreFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

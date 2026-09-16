@@ -94,6 +94,12 @@ main: kit: entity: stand: {
               }
             ]
           }
+          contract: {
+            id: "GET /api/stands"
+            json: "{\"operationId\":\"getAllStands\",\"parameters\":[{\"description\":\"Page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":1,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"Number of results per page\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":20,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"Filter stands by name\",\"in\":\"query\",\"name\":\"name\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"abilities\":{\"description\":\"List of stand abilities\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"chapter\":{\"description\":\"Chapter/Part of the series the stand appears in\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the stand\",\"type\":\"string\"},\"image\":{\"description\":\"URL to the stand's image\",\"format\":\"uri\",\"type\":\"string\"},\"japaneseName\":{\"description\":\"Japanese name of the stand\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the stand\",\"type\":\"string\"},\"type\":{\"description\":\"Type or classification of the stand\",\"type\":\"string\"},\"user\":{\"description\":\"Name of the stand user\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response with list of stands\"},\"400\":{\"description\":\"Bad request\"},\"500\":{\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/api/stands"
           segments: [
@@ -132,6 +138,12 @@ main: kit: entity: stand: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /api/stands/{id}"
+            json: "{\"operationId\":\"getStandById\",\"parameters\":[{\"description\":\"Unique identifier of the stand\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"abilities\":{\"description\":\"List of stand abilities\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"chapter\":{\"description\":\"Chapter/Part of the series the stand appears in\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the stand\",\"type\":\"string\"},\"image\":{\"description\":\"URL to the stand's image\",\"format\":\"uri\",\"type\":\"string\"},\"japaneseName\":{\"description\":\"Japanese name of the stand\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the stand\",\"type\":\"string\"},\"type\":{\"description\":\"Type or classification of the stand\",\"type\":\"string\"},\"user\":{\"description\":\"Name of the stand user\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with stand details\"},\"404\":{\"description\":\"Stand not found\"},\"500\":{\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/api/stands/{id}"
