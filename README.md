@@ -105,12 +105,12 @@ local results, err = client:Character():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/jojos-bizarre-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
-| Python | `voxgig-sdk-jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
-| PHP | `voxgig-sdk/jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
+| TypeScript | `@voxgig-sdk/jojos-bizarre-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/tags) |
+| Python | `voxgig-sdk-jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/tags) |
+| PHP | `voxgig-sdk/jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/jojos-bizarre-sdk/go` | `go get github.com/voxgig-sdk/jojos-bizarre-sdk/go@latest` |
-| Ruby | `voxgig-sdk-jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
-| Lua | `voxgig-sdk-jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/releases) |
+| Ruby | `voxgig-sdk-jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/tags) |
+| Lua | `voxgig-sdk-jojos-bizarre` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jojos-bizarre-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/jojos-bizarre-sdk/go-cli` | `go install github.com/voxgig-sdk/jojos-bizarre-sdk/go-cli/cmd/jojos-bizarre@latest` |
 | Go MCP server | `github.com/voxgig-sdk/jojos-bizarre-sdk/go-mcp` | `go get github.com/voxgig-sdk/jojos-bizarre-sdk/go-mcp@latest` |
 

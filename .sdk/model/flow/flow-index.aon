@@ -1,4 +1,4 @@
 # Flows
 
-@"BasicCharacterFlow.aon"
-@"BasicStandFlow.aon"
+@"./BasicCharacterFlow.aon"
+@"./BasicStandFlow.aon"

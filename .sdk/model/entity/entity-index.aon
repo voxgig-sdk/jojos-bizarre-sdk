@@ -1,4 +1,4 @@
 # Entity Models
 
-@"character.aon"
-@"stand.aon"
+@"./character.aon"
+@"./stand.aon"
