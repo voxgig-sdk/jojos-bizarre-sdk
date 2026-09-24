@@ -1,0 +1,183 @@
+# Entity: character
+
+main: kit: entity: character: {
+
+  alias: field: {}
+
+  fields: {
+    abilities: {
+      h: "Abilities"
+      n: "abilities"
+      r: false
+      sh: "List of character abilities"
+      t: "`$ARRAY`"
+    }
+    chapter: {
+      h: "Chapter"
+      n: "chapter"
+      r: false
+      sh: "Chapter/Part of the series the character appears in"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the character"
+      t: "`$STRING`"
+    }
+    image: {
+      fo: "uri"
+      h: "Image"
+      n: "image"
+      r: false
+      sh: "URL to the character's image"
+      t: "`$STRING`"
+    }
+    japaneseName: {
+      h: "Japanese Name"
+      n: "japaneseName"
+      r: false
+      sh: "Japanese name of the character"
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name of the character"
+      t: "`$STRING`"
+    }
+    nationality: {
+      h: "Nationality"
+      n: "nationality"
+      r: false
+      sh: "Nationality of the character"
+      t: "`$STRING`"
+    }
+    stand: {
+      h: "Stand"
+      n: "stand"
+      r: false
+      sh: "Name of the character's stand, if applicable"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "character"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/characters"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 20
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/characters"
+          q: {
+            exist: [
+              "limit"
+              "name"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "characters"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/characters/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/characters/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "characters"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,183 @@
+# Entity: stand
+
+main: kit: entity: stand: {
+
+  alias: field: {}
+
+  fields: {
+    abilities: {
+      h: "Abilities"
+      n: "abilities"
+      r: false
+      sh: "List of stand abilities"
+      t: "`$ARRAY`"
+    }
+    chapter: {
+      h: "Chapter"
+      n: "chapter"
+      r: false
+      sh: "Chapter/Part of the series the stand appears in"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the stand"
+      t: "`$STRING`"
+    }
+    image: {
+      fo: "uri"
+      h: "Image"
+      n: "image"
+      r: false
+      sh: "URL to the stand's image"
+      t: "`$STRING`"
+    }
+    japaneseName: {
+      h: "Japanese Name"
+      n: "japaneseName"
+      r: false
+      sh: "Japanese name of the stand"
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name of the stand"
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Type or classification of the stand"
+      t: "`$STRING`"
+    }
+    user: {
+      h: "User"
+      n: "user"
+      r: false
+      sh: "Name of the stand user"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "stand"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/stands"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 20
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/stands"
+          q: {
+            exist: [
+              "limit"
+              "name"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "stands"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/stands/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/stands/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "stands"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

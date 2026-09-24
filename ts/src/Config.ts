@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -142,44 +135,52 @@ class Config {
       "fields": [
         {
           "name": "abilities",
-          "short": "List of character abilities",
-          "type": "`$ARRAY`"
+          "title": "Abilities",
+          "type": "`$ARRAY`",
+          "short": "List of character abilities"
         },
         {
           "name": "chapter",
-          "short": "Chapter/Part of the series the character appears in",
-          "type": "`$STRING`"
+          "title": "Chapter",
+          "type": "`$STRING`",
+          "short": "Chapter/Part of the series the character appears in"
         },
         {
           "name": "id",
-          "short": "Unique identifier for the character",
-          "type": "`$STRING`"
+          "title": "Id",
+          "type": "`$STRING`",
+          "short": "Unique identifier for the character"
         },
         {
-          "format": "uri",
           "name": "image",
+          "title": "Image",
+          "type": "`$STRING`",
           "short": "URL to the character's image",
-          "type": "`$STRING`"
+          "format": "uri"
         },
         {
           "name": "japaneseName",
-          "short": "Japanese name of the character",
-          "type": "`$STRING`"
+          "title": "Japanese Name",
+          "type": "`$STRING`",
+          "short": "Japanese name of the character"
         },
         {
           "name": "name",
-          "short": "Name of the character",
-          "type": "`$STRING`"
+          "title": "Name",
+          "type": "`$STRING`",
+          "short": "Name of the character"
         },
         {
           "name": "nationality",
-          "short": "Nationality of the character",
-          "type": "`$STRING`"
+          "title": "Nationality",
+          "type": "`$STRING`",
+          "short": "Nationality of the character"
         },
         {
           "name": "stand",
-          "short": "Name of the character's stand, if applicable",
-          "type": "`$STRING`"
+          "title": "Stand",
+          "type": "`$STRING`",
+          "short": "Name of the character's stand, if applicable"
         }
       ],
       "id": {
@@ -193,30 +194,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": 20,
-                    "kind": "query",
-                    "name": "limit",
-                    "orig": "limit",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "name",
-                    "orig": "name",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": 1,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/api/characters",
@@ -228,21 +205,46 @@ class Config {
                   "lit": "characters"
                 }
               ],
+              "parts": [
+                "api",
+                "characters"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "limit",
+                    "orig": "limit",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 20
+                  },
+                  {
+                    "name": "name",
+                    "orig": "name",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 1
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "limit",
                   "name",
                   "page"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "api",
-                "characters"
-              ]
+              }
             }
           ]
         },
@@ -251,17 +253,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {
-                "params": [
-                  {
-                    "kind": "param",
-                    "name": "id",
-                    "orig": "id",
-                    "reqd": true,
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/api/characters/{id}",
@@ -276,20 +267,32 @@ class Config {
                   "var": "id"
                 }
               ],
-              "select": {
-                "exist": [
-                  "id"
-                ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "api",
                 "characters",
                 "{id}"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "params": [
+                  {
+                    "name": "id",
+                    "orig": "id",
+                    "type": "`$STRING`",
+                    "kind": "param",
+                    "reqd": true
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "id"
+                ]
+              }
             }
           ]
         }
@@ -302,44 +305,52 @@ class Config {
       "fields": [
         {
           "name": "abilities",
-          "short": "List of stand abilities",
-          "type": "`$ARRAY`"
+          "title": "Abilities",
+          "type": "`$ARRAY`",
+          "short": "List of stand abilities"
         },
         {
           "name": "chapter",
-          "short": "Chapter/Part of the series the stand appears in",
-          "type": "`$STRING`"
+          "title": "Chapter",
+          "type": "`$STRING`",
+          "short": "Chapter/Part of the series the stand appears in"
         },
         {
           "name": "id",
-          "short": "Unique identifier for the stand",
-          "type": "`$STRING`"
+          "title": "Id",
+          "type": "`$STRING`",
+          "short": "Unique identifier for the stand"
         },
         {
-          "format": "uri",
           "name": "image",
+          "title": "Image",
+          "type": "`$STRING`",
           "short": "URL to the stand's image",
-          "type": "`$STRING`"
+          "format": "uri"
         },
         {
           "name": "japaneseName",
-          "short": "Japanese name of the stand",
-          "type": "`$STRING`"
+          "title": "Japanese Name",
+          "type": "`$STRING`",
+          "short": "Japanese name of the stand"
         },
         {
           "name": "name",
-          "short": "Name of the stand",
-          "type": "`$STRING`"
+          "title": "Name",
+          "type": "`$STRING`",
+          "short": "Name of the stand"
         },
         {
           "name": "type",
-          "short": "Type or classification of the stand",
-          "type": "`$STRING`"
+          "title": "Type",
+          "type": "`$STRING`",
+          "short": "Type or classification of the stand"
         },
         {
           "name": "user",
-          "short": "Name of the stand user",
-          "type": "`$STRING`"
+          "title": "User",
+          "type": "`$STRING`",
+          "short": "Name of the stand user"
         }
       ],
       "id": {
@@ -353,30 +364,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": 20,
-                    "kind": "query",
-                    "name": "limit",
-                    "orig": "limit",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "name",
-                    "orig": "name",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": 1,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/api/stands",
@@ -388,21 +375,46 @@ class Config {
                   "lit": "stands"
                 }
               ],
+              "parts": [
+                "api",
+                "stands"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "limit",
+                    "orig": "limit",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 20
+                  },
+                  {
+                    "name": "name",
+                    "orig": "name",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 1
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "limit",
                   "name",
                   "page"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "api",
-                "stands"
-              ]
+              }
             }
           ]
         },
@@ -411,17 +423,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {
-                "params": [
-                  {
-                    "kind": "param",
-                    "name": "id",
-                    "orig": "id",
-                    "reqd": true,
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/api/stands/{id}",
@@ -436,20 +437,32 @@ class Config {
                   "var": "id"
                 }
               ],
-              "select": {
-                "exist": [
-                  "id"
-                ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "api",
                 "stands",
                 "{id}"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "params": [
+                  {
+                    "name": "id",
+                    "orig": "id",
+                    "type": "`$STRING`",
+                    "kind": "param",
+                    "reqd": true
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "id"
+                ]
+              }
             }
           ]
         }

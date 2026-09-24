@@ -1,0 +1,44 @@
+# BasicStandFlow
+
+main: kit: flow: BasicStandFlow:
+{
+  entity: "stand",
+  kind: "basic",
+  name: "BasicStandFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "stand_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "stand_ref01",
+        srcdatavar: "stand_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "stand01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-stand_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicStandFlow"
+}

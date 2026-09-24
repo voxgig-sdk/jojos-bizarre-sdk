@@ -1,7 +1,7 @@
 // Typed models for the JojosBizarre SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,14 +14,6 @@ import (
 
 // Character is the typed data model for the character entity.
 type Character struct {
-	Abilities *[]any `json:"abilities,omitempty"`
-	Chapter *string `json:"chapter,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Image *string `json:"image,omitempty"`
-	JapaneseName *string `json:"japaneseName,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Nationality *string `json:"nationality,omitempty"`
-	Stand *string `json:"stand,omitempty"`
 }
 
 // CharacterLoadMatch is the typed request payload for Character.LoadTyped.
@@ -38,14 +30,6 @@ type CharacterListMatch struct {
 
 // Stand is the typed data model for the stand entity.
 type Stand struct {
-	Abilities *[]any `json:"abilities,omitempty"`
-	Chapter *string `json:"chapter,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Image *string `json:"image,omitempty"`
-	JapaneseName *string `json:"japaneseName,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	User *string `json:"user,omitempty"`
 }
 
 // StandLoadMatch is the typed request payload for Stand.LoadTyped.

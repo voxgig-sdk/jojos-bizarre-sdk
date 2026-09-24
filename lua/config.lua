@@ -88,44 +88,52 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "abilities",
-            ["short"] = "List of character abilities",
+            ["title"] = "Abilities",
             ["type"] = "`$ARRAY`",
+            ["short"] = "List of character abilities",
           },
           {
             ["name"] = "chapter",
-            ["short"] = "Chapter/Part of the series the character appears in",
+            ["title"] = "Chapter",
             ["type"] = "`$STRING`",
+            ["short"] = "Chapter/Part of the series the character appears in",
           },
           {
             ["name"] = "id",
-            ["short"] = "Unique identifier for the character",
+            ["title"] = "Id",
             ["type"] = "`$STRING`",
+            ["short"] = "Unique identifier for the character",
           },
           {
-            ["format"] = "uri",
             ["name"] = "image",
-            ["short"] = "URL to the character's image",
+            ["title"] = "Image",
             ["type"] = "`$STRING`",
+            ["short"] = "URL to the character's image",
+            ["format"] = "uri",
           },
           {
             ["name"] = "japaneseName",
-            ["short"] = "Japanese name of the character",
+            ["title"] = "Japanese Name",
             ["type"] = "`$STRING`",
+            ["short"] = "Japanese name of the character",
           },
           {
             ["name"] = "name",
-            ["short"] = "Name of the character",
+            ["title"] = "Name",
             ["type"] = "`$STRING`",
+            ["short"] = "Name of the character",
           },
           {
             ["name"] = "nationality",
-            ["short"] = "Nationality of the character",
+            ["title"] = "Nationality",
             ["type"] = "`$STRING`",
+            ["short"] = "Nationality of the character",
           },
           {
             ["name"] = "stand",
-            ["short"] = "Name of the character's stand, if applicable",
+            ["title"] = "Stand",
             ["type"] = "`$STRING`",
+            ["short"] = "Name of the character's stand, if applicable",
           },
         },
         ["id"] = {
@@ -139,30 +147,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["args"] = {
-                  ["query"] = {
-                    {
-                      ["example"] = 20,
-                      ["kind"] = "query",
-                      ["name"] = "limit",
-                      ["orig"] = "limit",
-                      ["type"] = "`$INTEGER`",
-                    },
-                    {
-                      ["kind"] = "query",
-                      ["name"] = "name",
-                      ["orig"] = "name",
-                      ["type"] = "`$STRING`",
-                    },
-                    {
-                      ["example"] = 1,
-                      ["kind"] = "query",
-                      ["name"] = "page",
-                      ["orig"] = "page",
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/characters",
@@ -174,20 +158,45 @@ local function make_config()
                     ["lit"] = "characters",
                   },
                 },
+                ["parts"] = {
+                  "api",
+                  "characters",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["query"] = {
+                    {
+                      ["name"] = "limit",
+                      ["orig"] = "limit",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 20,
+                    },
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                  },
+                },
                 ["select"] = {
                   ["exist"] = {
                     "limit",
                     "name",
                     "page",
                   },
-                },
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
-                },
-                ["parts"] = {
-                  "api",
-                  "characters",
                 },
               },
             },
@@ -197,17 +206,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["params"] = {
-                    {
-                      ["kind"] = "param",
-                      ["name"] = "id",
-                      ["orig"] = "id",
-                      ["reqd"] = true,
-                      ["type"] = "`$STRING`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/characters/{id}",
@@ -222,19 +220,31 @@ local function make_config()
                     ["var"] = "id",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "id",
-                  },
-                },
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
-                },
                 ["parts"] = {
                   "api",
                   "characters",
                   "{id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "id",
+                  },
                 },
               },
             },
@@ -248,44 +258,52 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "abilities",
-            ["short"] = "List of stand abilities",
+            ["title"] = "Abilities",
             ["type"] = "`$ARRAY`",
+            ["short"] = "List of stand abilities",
           },
           {
             ["name"] = "chapter",
-            ["short"] = "Chapter/Part of the series the stand appears in",
+            ["title"] = "Chapter",
             ["type"] = "`$STRING`",
+            ["short"] = "Chapter/Part of the series the stand appears in",
           },
           {
             ["name"] = "id",
-            ["short"] = "Unique identifier for the stand",
+            ["title"] = "Id",
             ["type"] = "`$STRING`",
+            ["short"] = "Unique identifier for the stand",
           },
           {
-            ["format"] = "uri",
             ["name"] = "image",
-            ["short"] = "URL to the stand's image",
+            ["title"] = "Image",
             ["type"] = "`$STRING`",
+            ["short"] = "URL to the stand's image",
+            ["format"] = "uri",
           },
           {
             ["name"] = "japaneseName",
-            ["short"] = "Japanese name of the stand",
+            ["title"] = "Japanese Name",
             ["type"] = "`$STRING`",
+            ["short"] = "Japanese name of the stand",
           },
           {
             ["name"] = "name",
-            ["short"] = "Name of the stand",
+            ["title"] = "Name",
             ["type"] = "`$STRING`",
+            ["short"] = "Name of the stand",
           },
           {
             ["name"] = "type",
-            ["short"] = "Type or classification of the stand",
+            ["title"] = "Type",
             ["type"] = "`$STRING`",
+            ["short"] = "Type or classification of the stand",
           },
           {
             ["name"] = "user",
-            ["short"] = "Name of the stand user",
+            ["title"] = "User",
             ["type"] = "`$STRING`",
+            ["short"] = "Name of the stand user",
           },
         },
         ["id"] = {
@@ -299,30 +317,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["args"] = {
-                  ["query"] = {
-                    {
-                      ["example"] = 20,
-                      ["kind"] = "query",
-                      ["name"] = "limit",
-                      ["orig"] = "limit",
-                      ["type"] = "`$INTEGER`",
-                    },
-                    {
-                      ["kind"] = "query",
-                      ["name"] = "name",
-                      ["orig"] = "name",
-                      ["type"] = "`$STRING`",
-                    },
-                    {
-                      ["example"] = 1,
-                      ["kind"] = "query",
-                      ["name"] = "page",
-                      ["orig"] = "page",
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/stands",
@@ -334,20 +328,45 @@ local function make_config()
                     ["lit"] = "stands",
                   },
                 },
+                ["parts"] = {
+                  "api",
+                  "stands",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["query"] = {
+                    {
+                      ["name"] = "limit",
+                      ["orig"] = "limit",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 20,
+                    },
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                  },
+                },
                 ["select"] = {
                   ["exist"] = {
                     "limit",
                     "name",
                     "page",
                   },
-                },
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
-                },
-                ["parts"] = {
-                  "api",
-                  "stands",
                 },
               },
             },
@@ -357,17 +376,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["params"] = {
-                    {
-                      ["kind"] = "param",
-                      ["name"] = "id",
-                      ["orig"] = "id",
-                      ["reqd"] = true,
-                      ["type"] = "`$STRING`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/stands/{id}",
@@ -382,19 +390,31 @@ local function make_config()
                     ["var"] = "id",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "id",
-                  },
-                },
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
-                },
                 ["parts"] = {
                   "api",
                   "stands",
                   "{id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "id",
+                  },
                 },
               },
             },
